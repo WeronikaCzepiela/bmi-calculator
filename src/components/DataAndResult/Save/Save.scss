@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+button {
+  width: 300px;
+  height: 48px;
+  background-color: #8E4FDB;
+  color: #FBFBFD;
+  font-family: Rubik;
+  font-size: 16px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: #AB7DE4;
+  }
+
+  &:active {
+    background-color: #6B29BB;
+  }
+}

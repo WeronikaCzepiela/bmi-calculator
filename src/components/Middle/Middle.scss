@@ -1,0 +1,11 @@
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &-desktop {
+    border-color: #21212E;
+    border-radius: 32px;
+  }
+}

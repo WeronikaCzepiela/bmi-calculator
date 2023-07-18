@@ -1,0 +1,33 @@
+
+
+%component {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+width: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  border-bottom-color: #21212E;
+  border-bottom-style: groove;
+  height: 50px;
+}
+
+
+ .line {
+   width: 100px;
+   height: 2px;
+   background-color: #FBFBFD;
+ }
+
+.description {
+  @extend %component
+}
+
+.calculator {
+  @extend %component
+}
