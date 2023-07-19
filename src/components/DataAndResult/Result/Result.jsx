@@ -22,12 +22,12 @@ export const Result = () => {
 
   return (
     <div className={'result'}>
-      <div className={'line'} />
+      <div className={'result-line'} />
       <div className={'result-button'} style={{ backgroundColor: colorResult() }}>
         <img src={Check} />
         <Text> {textOnResult()} </Text>
       </div>
-      <div className={'line'} />
+      <div className={'result-line'} />
     </div>
   )
 }
