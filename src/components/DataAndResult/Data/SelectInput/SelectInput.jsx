@@ -2,9 +2,9 @@ import ReactSelect from 'react-select'
 import './SelectInput.scss'
 import { Text } from '../../../Text/Text'
 
-export const SelectInput = ({ options, text }) => {
+export const SelectInput = ({ options, text, onChange }) => {
   const handleChange = (selectedOption) => {
-    return selectedOption.value
+    onChange(selectedOption.value)
   }
 
   const customStyles = {
@@ -36,7 +36,7 @@ export const SelectInput = ({ options, text }) => {
 
   return (
     <div className={'select'}>
-      <Text type={'l'}>{text}</Text>
+      <Text>{text}</Text>
       <ReactSelect
         className={'select-input'}
         options={options}
