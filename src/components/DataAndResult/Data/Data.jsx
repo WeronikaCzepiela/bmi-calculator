@@ -1,7 +1,8 @@
 import './Data.scss'
 import { Text } from '../../Text/Text'
-import { SelectInput } from './SelectInput/SelectInput'
-import { RadioGroup } from './RadioGroup/RadioGroup'
+import { SelectInput } from './SelectInput'
+import { RadioGroup } from './RadioGroup'
+import { TextInput } from './TextInput'
 
 export const Data = () => {
   const options = [
@@ -21,6 +22,7 @@ export const Data = () => {
         name={'height'}
         title={'Height unit'}
       />
+      <TextInput text={'Height'} onChange={(newValue) => console.log(newValue)} />
       <RadioGroup
         onChange={(newValue) => console.log(newValue)}
         options={[
@@ -30,6 +32,7 @@ export const Data = () => {
         name={'weight'}
         title={'Weight unit'}
       />
+      <TextInput text={'Weight'} onChange={(newValue) => console.log(newValue)} />
     </div>
   )
 }

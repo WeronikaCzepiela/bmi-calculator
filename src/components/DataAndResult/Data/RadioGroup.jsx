@@ -1,5 +1,5 @@
 import './RadioGroup.scss'
-import { Text } from '../../../Text/Text'
+import { Text } from '../../Text/Text'
 
 export const RadioGroup = ({ options, name, title, onChange }) => {
   const handleChange = (selectedOption) => {

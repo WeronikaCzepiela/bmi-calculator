@@ -1,6 +1,6 @@
 import ReactSelect from 'react-select'
 import './SelectInput.scss'
-import { Text } from '../../../Text/Text'
+import { Text } from '../../Text/Text'
 
 export const SelectInput = ({ options, text, onChange }) => {
   const handleChange = (selectedOption) => {
@@ -28,7 +28,8 @@ export const SelectInput = ({ options, text, onChange }) => {
       ...defaultStyles,
       defaultStyles,
       backgroundColor: '#101019',
-      borderColor: '#353542',
+      // borderColor: '#353542',
+
       textColor: '#AAAABF',
       borderRadius: 6,
     }),
