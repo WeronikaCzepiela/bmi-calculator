@@ -8,7 +8,7 @@ export const TextInput = ({ text, onChange }) => {
   return (
     <div className={'input'}>
       <Text type={'l'}>{text}</Text>
-      <input className={'input-group'} type={'number'} onInput={handleChange} />
+      <input className={'input-group'} onInput={handleChange} />
     </div>
   )
 }

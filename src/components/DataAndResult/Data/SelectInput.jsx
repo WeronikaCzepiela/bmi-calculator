@@ -15,10 +15,17 @@ export const SelectInput = ({ options, text, onChange }) => {
       color: state.isSelected ? '#AAAABF' : '#AAAABF',
     }),
 
-    menu: (defaultStyles, state) => ({
+    indicatorSeparator: (defaultStyles, state) => ({
       ...defaultStyles,
       defaultStyles,
       backgroundColor: '#101019',
+    }),
+
+    menuList: (defaultStyles, state) => ({
+      ...defaultStyles,
+      defaultStyles,
+      backgroundColor: '#101019',
+      borderWidth: 5,
       borderColor: '#353542',
       color: '#AAAABF',
       borderRadius: 6,
@@ -28,10 +35,9 @@ export const SelectInput = ({ options, text, onChange }) => {
       ...defaultStyles,
       defaultStyles,
       backgroundColor: '#101019',
-      // borderColor: '#353542',
-
-      textColor: '#AAAABF',
+      borderColor: '#353542',
       borderRadius: 6,
+      color: '#AAAABF',
     }),
   }
 
