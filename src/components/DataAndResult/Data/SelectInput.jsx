@@ -21,13 +21,18 @@ export const SelectInput = ({ options, text, onChange }) => {
       backgroundColor: '#101019',
     }),
 
-    menuList: (defaultStyles, state) => ({
+    placeholder: (defaultStyles, state) => ({
+      ...defaultStyles,
+      defaultStyles,
+      color: '#AAAABF',
+    }),
+
+    menu: (defaultStyles, state) => ({
       ...defaultStyles,
       defaultStyles,
       backgroundColor: '#101019',
       borderWidth: 5,
       borderColor: '#353542',
-      color: '#AAAABF',
       borderRadius: 6,
     }),
 
@@ -37,7 +42,6 @@ export const SelectInput = ({ options, text, onChange }) => {
       backgroundColor: '#101019',
       borderColor: '#353542',
       borderRadius: 6,
-      color: '#AAAABF',
     }),
   }
 
