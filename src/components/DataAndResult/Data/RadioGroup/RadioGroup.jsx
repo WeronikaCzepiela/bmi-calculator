@@ -12,7 +12,12 @@ export const RadioGroup = ({ options, name, label, onChange, defaultValue }) => 
       {options.map(({ label, value }) => {
         return (
           <div key={value} className={'radio-option'} onChange={handleChange}>
-            <input type={'radio'} name={name} value={value} checked={defaultValue === value} />
+            <input
+              type={'radio'}
+              name={name}
+              value={value}
+              defaultChecked={defaultValue === value}
+            />
             <Text>{label}</Text>
           </div>
         )

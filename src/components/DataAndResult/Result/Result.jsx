@@ -2,22 +2,20 @@ import './Result.scss'
 import { Text } from '../../Text/Text'
 import Check from './check.png'
 
-export const Result = () => {
-  const bmi = 22
-
+export const Result = ({ BMI }) => {
   const textOnResult = () => {
-    if (bmi < 17) return 'You have to low BMI'
-    if (bmi >= 17 && bmi < 18.5) return 'You have a little to low BMI'
-    if (bmi >= 18.5 && bmi < 25) return 'You have good BMI'
-    if (bmi >= 25 && bmi < 30) return 'You have a little to high BMI'
-    if (bmi >= 30) return 'You have to  high BMI'
+    if (BMI < 17) return 'You have too low BMI'
+    if (BMI >= 17 && BMI < 18.5) return 'You have a little too low BMI'
+    if (BMI >= 18.5 && BMI < 25) return 'You have good BMI'
+    if (BMI >= 25 && BMI < 30) return 'You have a little too high BMI'
+    if (BMI >= 30) return 'You have too high BMI'
   }
 
   const colorResult = () => {
-    if (bmi < 17 || bmi >= 30) return '#4E1F1F'
-    if (bmi >= 17 && bmi < 18.5) return '#4E4C1F'
-    if (bmi >= 18.5 && bmi < 25) return '#264E1F'
-    if (bmi >= 25 && bmi < 30) return '#4E4C1F'
+    if (BMI < 17 || BMI >= 30) return '#4E1F1F'
+    if (BMI >= 17 && BMI < 18.5) return '#4E4C1F'
+    if (BMI >= 18.5 && BMI < 25) return '#264E1F'
+    if (BMI >= 25 && BMI < 30) return '#4E4C1F'
   }
 
   return (

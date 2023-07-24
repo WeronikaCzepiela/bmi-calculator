@@ -7,6 +7,9 @@ export const Text = ({ type, children }) => {
   if (type === 'l') {
     return <label>{children}</label>
   }
+  if (type === 'e') {
+    return <p className={'error'}>{children}</p>
+  }
 
   return <p>{children}</p>
 }

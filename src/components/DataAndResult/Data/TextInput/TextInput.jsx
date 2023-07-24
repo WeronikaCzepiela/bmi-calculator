@@ -9,7 +9,7 @@ export const TextInput = ({ label, onChange, value, error }) => {
     <div className={'input'}>
       <Text type={'l'}>{label}</Text>
       <input className={'input-group'} onInput={handleChange} value={value} type={'number'} />
-      {error && <Text type={'l'}>{error}</Text>}
+      <Text type={'e'}>{error?.message}</Text>
     </div>
   )
 }

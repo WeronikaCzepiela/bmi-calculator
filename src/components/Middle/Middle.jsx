@@ -1,11 +1,11 @@
 import './Middle.scss'
-import { DataAndResult } from '../DataAndResult/DataAndResult'
 import { Chart } from '../Chart/Chart'
+import { Data } from '../DataAndResult/Data/Data'
 
 export const Middle = () => {
   return (
     <div className={'middle'}>
-      <DataAndResult />
+      <Data />
       <Chart />
     </div>
   )
