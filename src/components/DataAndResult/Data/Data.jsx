@@ -28,14 +28,18 @@ export const Data = () => {
     resolver: zodResolver(schema),
   })
 
+  console.log(watch())
   const BMI_calculator = () => {
     let height = getValues('height')
     let weight = getValues('weight')
+    const sex = getValues('sex')
     const height_unit = getValues('height_unit')
     const weight_unit = getValues('weight_unit')
     if (height_unit === 'inch') height = inchToCm(height)
     if (weight_unit === 'pound') weight = poundToKg(weight)
-    return (weight / (height * height)) * 10000
+    if (height > 100 && height < 350 && weight > 10 && weight < 1000 && sex !== '') {
+      return (weight / (height * height)) * 10000
+    } else return
   }
 
   const BMI = BMI_calculator()

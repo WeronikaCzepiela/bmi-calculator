@@ -4,11 +4,11 @@ import Check from './check.png'
 
 export const Result = ({ BMI }) => {
   const textOnResult = () => {
-    if (BMI < 17) return 'You have too low BMI'
-    if (BMI >= 17 && BMI < 18.5) return 'You have a little too low BMI'
-    if (BMI >= 18.5 && BMI < 25) return 'You have good BMI'
-    if (BMI >= 25 && BMI < 30) return 'You have a little too high BMI'
-    if (BMI >= 30) return 'You have too high BMI'
+    if (BMI < 17) return 'You have too low BMI='
+    if (BMI >= 17 && BMI < 18.5) return 'You have a little too low BMI='
+    if (BMI >= 18.5 && BMI < 25) return 'You have good BMI='
+    if (BMI >= 25 && BMI < 30) return 'You have a little too high BMI='
+    if (BMI >= 30) return 'You have too high BMI='
   }
 
   const colorResult = () => {
@@ -23,7 +23,10 @@ export const Result = ({ BMI }) => {
       <div className={'result-line'} />
       <div className={'result-button'} style={{ backgroundColor: colorResult() }}>
         <img src={Check} />
-        <Text> {textOnResult()} </Text>
+        <Text>
+          {' '}
+          {textOnResult()} {BMI.toFixed(2)}
+        </Text>
       </div>
       <div className={'result-line'} />
     </div>

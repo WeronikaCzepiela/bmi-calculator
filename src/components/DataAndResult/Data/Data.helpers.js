@@ -7,6 +7,12 @@ export const inchToCm = (value) => {
   return value * 2.54
 }
 
+const kgToPounds = (value) => {
+  return value * 2.205
+}
+
+console.log(kgToPounds(10))
+
 export const schema = z
   .object({
     height: z.string(),
@@ -34,13 +40,13 @@ export const schema = z
 
     if (
       (weightNumber < 10 && weight_unit === 'kg') ||
-      (weightNumber < 22 && height_unit === 'pound')
+      (weightNumber < kgToPounds(10) && weight_unit === 'pound')
     ) {
       ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'Too small', path: ['weight'] })
     }
     if (
       (weightNumber > 1000 && weight_unit === 'kg') ||
-      (weightNumber > 2205 && height_unit === 'pound')
+      (weightNumber > kgToPounds(1000) && weight_unit === 'pound')
     ) {
       ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'Too big', path: ['weight'] })
     }
