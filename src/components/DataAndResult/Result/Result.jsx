@@ -25,7 +25,7 @@ export const Result = ({ BMI }) => {
         <img src={Check} />
         <Text>
           {' '}
-          {textOnResult()} {BMI.toFixed(2)}
+          {textOnResult()} {BMI}
         </Text>
       </div>
       <div className={'result-line'} />

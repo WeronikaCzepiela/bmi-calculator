@@ -11,8 +11,6 @@ const kgToPounds = (value) => {
   return value * 2.205
 }
 
-console.log(kgToPounds(10))
-
 export const schema = z
   .object({
     height: z.string(),

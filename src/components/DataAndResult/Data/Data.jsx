@@ -9,6 +9,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { inchToCm, poundToKg, schema } from './Data.helpers'
 import { Result } from '../Result/Result'
 import { Save } from '../Save/Save'
+import { useState } from 'react'
+import moment from 'moment'
 
 export const Data = () => {
   const {
@@ -28,7 +30,6 @@ export const Data = () => {
     resolver: zodResolver(schema),
   })
 
-  console.log(watch())
   const BMI_calculator = () => {
     let height = getValues('height')
     let weight = getValues('weight')
@@ -38,11 +39,31 @@ export const Data = () => {
     if (height_unit === 'inch') height = inchToCm(height)
     if (weight_unit === 'pound') weight = poundToKg(weight)
     if (height > 100 && height < 350 && weight > 10 && weight < 1000 && sex !== '') {
-      return (weight / (height * height)) * 10000
+      const bmi = (weight / (height * height)) * 10000
+      return bmi.toFixed(2)
     } else return
   }
 
   const BMI = BMI_calculator()
+
+  const getDate = () => {
+    return moment().format('DD.MM.YYYY')
+  }
+
+  const [bmiList, setBmiList] = useState([JSON.parse(window.localStorage.getItem('BMI-list'))])
+
+  const addNewBmiItem = () => {
+    const newBmiList = [
+      ...bmiList,
+      {
+        date: getDate(),
+        value: BMI,
+      },
+    ]
+    console.log(newBmiList)
+    setBmiList(newBmiList)
+    window.localStorage.setItem('BMI-list', JSON.stringify(newBmiList))
+  }
 
   return (
     <div className={'data-and-result'}>
@@ -65,7 +86,7 @@ export const Data = () => {
         <TextInputForm label={'Weight'} name={'weight'} control={control} />
       </div>
       {BMI && <Result BMI={BMI} />}
-      <Save />
+      <Save bmi={BMI} addNewBmiItem={addNewBmiItem} />
     </div>
   )
 }
