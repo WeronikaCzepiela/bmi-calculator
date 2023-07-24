@@ -12,7 +12,7 @@ import { Save } from '../Save/Save'
 import { useState } from 'react'
 import moment from 'moment'
 
-export const Data = () => {
+export const Data = ({ addNewBmiItem }) => {
   const {
     control,
     getValues,
@@ -30,7 +30,7 @@ export const Data = () => {
     resolver: zodResolver(schema),
   })
 
-  const BMI_calculator = () => {
+  const calculateBmi = () => {
     let height = getValues('height')
     let weight = getValues('weight')
     const sex = getValues('sex')
@@ -44,26 +44,7 @@ export const Data = () => {
     } else return
   }
 
-  const BMI = BMI_calculator()
-
-  const getDate = () => {
-    return moment().format('DD.MM.YYYY')
-  }
-
-  const [bmiList, setBmiList] = useState([JSON.parse(window.localStorage.getItem('BMI-list'))])
-
-  const addNewBmiItem = () => {
-    const newBmiList = [
-      ...bmiList,
-      {
-        date: getDate(),
-        value: BMI,
-      },
-    ]
-    console.log(newBmiList)
-    setBmiList(newBmiList)
-    window.localStorage.setItem('BMI-list', JSON.stringify(newBmiList))
-  }
+  const bmi = calculateBmi()
 
   return (
     <div className={'data-and-result'}>
@@ -85,8 +66,8 @@ export const Data = () => {
         />
         <TextInputForm label={'Weight'} name={'weight'} control={control} />
       </div>
-      {BMI && <Result BMI={BMI} />}
-      <Save bmi={BMI} addNewBmiItem={addNewBmiItem} />
+      {bmi && <Result BMI={bmi} />}
+      <Save addNewBmiItem={() => addNewBmiItem(bmi)} />
     </div>
   )
 }

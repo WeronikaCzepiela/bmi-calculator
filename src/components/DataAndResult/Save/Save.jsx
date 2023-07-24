@@ -1,7 +1,6 @@
 import './Save.scss'
-import { useState } from 'react'
 
-export const Save = ({ bmi, addNewBmiItem }) => {
+export const Save = ({ addNewBmiItem }) => {
   const helperAddNewBmiItem = () => {
     addNewBmiItem()
   }
