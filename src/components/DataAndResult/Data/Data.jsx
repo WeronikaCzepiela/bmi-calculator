@@ -1,38 +1,42 @@
 import './Data.scss'
 import { Text } from '../../Text/Text'
-import { SelectInput } from './SelectInput'
-import { RadioGroup } from './RadioGroup'
-import { TextInput } from './TextInput'
+import { useForm } from 'react-hook-form'
+import { TextInputForm } from './TextInput/TextInputForm'
+import { RadioGroupForm } from './RadioGroup/RadioGroupForm'
+import { SelectInputForm } from './SelectInput/SelectInputForm'
+import { optionsHeight, optionsSex, optionsWeight } from './Options'
 
 export const Data = () => {
-  const options = [
-    { value: 'male', label: 'Male' },
-    { value: 'female', label: 'Female' },
-  ]
+  const { control, watch } = useForm({
+    defaultValues: {
+      sex: '',
+      height_unit: 'cm',
+      height: '',
+      weight_unit: 'kg',
+      weight: '',
+    },
+  })
+
+  console.log(watch())
+
   return (
     <div className={'data'}>
       <Text type={'h2'}>Parameters</Text>
-      <SelectInput options={options} text={'Sex'} onChange={(newValue) => console.log(newValue)} />
-      <RadioGroup
-        onChange={(newValue) => console.log(newValue)}
-        options={[
-          { label: 'cm', value: 'cm' },
-          { label: 'inch', value: 'inch' },
-        ]}
-        name={'height'}
-        title={'Height unit'}
+      <SelectInputForm label={'Sex'} options={optionsSex} control={control} name={'sex'} />
+      <RadioGroupForm
+        label={'Height unit'}
+        options={optionsHeight}
+        name={'height_unit'}
+        control={control}
       />
-      <TextInput text={'Height'} onChange={(newValue) => console.log(newValue)} />
-      <RadioGroup
-        onChange={(newValue) => console.log(newValue)}
-        options={[
-          { label: 'kg', value: 'kg' },
-          { label: 'pound', value: 'pound' },
-        ]}
-        name={'weight'}
-        title={'Weight unit'}
+      <TextInputForm label={'Height'} name={'height'} control={control} />
+      <RadioGroupForm
+        label={'Weight unit'}
+        options={optionsWeight}
+        name={'weight_unit'}
+        control={control}
       />
-      <TextInput text={'Weight'} onChange={(newValue) => console.log(newValue)} />
+      <TextInputForm label={'Weight'} name={'weight'} control={control} />
     </div>
   )
 }
