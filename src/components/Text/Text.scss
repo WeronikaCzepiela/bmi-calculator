@@ -18,6 +18,11 @@ p {
   color: red;
 }
 
+.title {
+  @extend %text;
+  font-size: 16px;
+}
+
 label {
   @extend %text;
   font-size: 16px;

@@ -10,6 +10,8 @@ import {
   Tooltip,
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
+import { colorResult, getDateData, getValueData, optionChart } from './Chart.helpers'
+import { Text } from '../Text/Text'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip)
 export const Chart = ({ measurementsHistory }) => {
@@ -22,74 +24,34 @@ export const Chart = ({ measurementsHistory }) => {
     { date: '24.06.2023', value: '24.00' },
     { date: '24.07.2023', value: '28.80' },
   ]
-  const colorResult = (dataValue) =>
-    dataValue.map((stringItem) => {
-      const item = parseInt(stringItem)
-      if (item < 17 || item >= 30) return '#DC483E'
-      if ((item >= 17 && item < 18.5) || (item >= 25 && item < 30)) return '#DCB93E'
-      if (item >= 18.5 && item < 25) return '#1A9C1F'
-    })
 
-  const labels = measurements.map((item) => item.date)
-  const dataValue = measurements.map((item) => item.value)
-  const count = labels.length.toString()
+  const dateData = getDateData(measurements)
+  const dateValue = getValueData(measurements)
+  const count = getDateData(measurements).length
 
   const dataSet = {
-    labels,
+    labels: dateData,
     datasets: [
       {
         label: 'Dataset',
-        data: dataValue,
+        data: dateValue,
         borderWidth: 2,
         elements: {
           line: {
             borderColor: '#353542',
           },
           point: {
-            backgroundColor: colorResult(dataValue),
+            backgroundColor: colorResult(dateValue),
           },
         },
       },
     ],
   }
 
-  const options = {
-    options: {
-      scaleShowGridLines: true,
-      scales: {
-        x: {
-          min: -1,
-          grid: {
-            color: '#DC483E',
-            lineWidth: 2,
-          },
-        },
-        y: {
-          max: 40,
-          grid: {
-            color: '#DC483E',
-            lineWidth: 2,
-          },
-        },
-      },
-    },
-    plugins: {
-      title: {
-        width: 200,
-        color: '#FBFBFD',
-        display: true,
-        text: `Last ${count} saved measurements`,
-        font: {
-          size: 15,
-          family: 'Rubik',
-        },
-      },
-    },
-  }
-
   return (
     <div className={'chart'}>
-      <Line data={dataSet} options={options} />
+      <Text type={'t'}>Last {count} saved measurements</Text>
+      <Line data={dataSet} options={optionChart} />
     </div>
   )
 }

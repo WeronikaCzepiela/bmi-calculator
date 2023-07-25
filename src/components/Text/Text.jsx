@@ -10,6 +10,9 @@ export const Text = ({ type, children }) => {
   if (type === 'e') {
     return <p className={'error'}>{children}</p>
   }
+  if (type === 't') {
+    return <p className={'title'}>{children}</p>
+  }
 
   return <p>{children}</p>
 }
