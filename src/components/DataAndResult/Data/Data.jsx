@@ -12,7 +12,7 @@ import { Save } from '../Save/Save'
 import { useState } from 'react'
 import moment from 'moment'
 
-export const Data = ({ addNewBmiItem }) => {
+export const Data = ({ setNewMeasurementsHistory }) => {
   const {
     control,
     getValues,
@@ -67,7 +67,7 @@ export const Data = ({ addNewBmiItem }) => {
         <TextInputForm label={'Weight'} name={'weight'} control={control} />
       </div>
       {bmi && <Result BMI={bmi} />}
-      <Save addNewBmiItem={() => addNewBmiItem(bmi)} />
+      <Save setNewMeasurementsHistory={() => setNewMeasurementsHistory(bmi)} />
     </div>
   )
 }
