@@ -1,11 +1,11 @@
 import './Chart.scss'
 import React from 'react'
 import {
-  Chart as ChartJS,
   CategoryScale,
+  Chart as ChartJS,
   LinearScale,
-  PointElement,
   LineElement,
+  PointElement,
   Title,
   Tooltip,
 } from 'chart.js'
@@ -22,24 +22,69 @@ export const Chart = ({ measurementsHistory }) => {
     { date: '24.06.2023', value: '24.00' },
     { date: '24.07.2023', value: '28.80' },
   ]
+  const colorResult = (dataValue) =>
+    dataValue.map((stringItem) => {
+      const item = parseInt(stringItem)
+      if (item < 17 || item >= 30) return '#DC483E'
+      if ((item >= 17 && item < 18.5) || (item >= 25 && item < 30)) return '#DCB93E'
+      if (item >= 18.5 && item < 25) return '#1A9C1F'
+    })
 
   const labels = measurements.map((item) => item.date)
+  const dataValue = measurements.map((item) => item.value)
+  const count = labels.length.toString()
+  console.log(count)
 
-  const data = {
+  const dataSet = {
     labels,
     datasets: [
       {
-        label: 'Dataset 1',
-        data: measurements.map((item) => item.value),
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        xAxisID: 'xAxis',
+        yAxisID: 'yAxis',
+        label: 'Dataset',
+        data: dataValue,
+        borderWidth: 2,
+        elements: {
+          line: {
+            borderColor: '#353542',
+          },
+          point: {
+            backgroundColor: colorResult(dataValue),
+          },
+        },
       },
     ],
   }
 
+  const options = {
+    options: {
+      scales: {
+        xAxis: {
+          gridLines: {
+            color: '#DC483E',
+            lineWidth: 2,
+          },
+        },
+      },
+    },
+    plugins: {
+      title: {
+        width: 200,
+        color: '#FBFBFD',
+        display: true,
+        text: `Last ${count} saved measurements`,
+        font: {
+          size: 20,
+          family: 'Rubik',
+          style: 'regular',
+        },
+      },
+    },
+  }
+
   return (
     <div className={'chart'}>
-      <Line data={data} />
+      <Line data={dataSet} options={options} />
     </div>
   )
 }
