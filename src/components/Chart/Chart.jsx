@@ -12,6 +12,8 @@ import {
 import { Line } from 'react-chartjs-2'
 import { colorResult, getDateData, getValueData, optionChart } from './Chart.helpers'
 import { Text } from '../Text/Text'
+import { useWindowDimensions } from '../../utils/hookers/useWindowDimensions'
+import { dimension } from '../../utils/Dimension'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip)
 export const Chart = ({ measurementsHistory }) => {
@@ -28,6 +30,7 @@ export const Chart = ({ measurementsHistory }) => {
   const dateData = getDateData(measurements)
   const dateValue = getValueData(measurements)
   const count = getDateData(measurements).length
+  const { width } = useWindowDimensions()
 
   const dataSet = {
     labels: dateData,
@@ -42,6 +45,7 @@ export const Chart = ({ measurementsHistory }) => {
           },
           point: {
             backgroundColor: colorResult(dateValue),
+            radius: 5,
           },
         },
       },
@@ -49,7 +53,7 @@ export const Chart = ({ measurementsHistory }) => {
   }
 
   return (
-    <div className={'chart'}>
+    <div className={`chart ${width > dimension() && 'chart-desktop'}`}>
       <Text type={'t'}>Last {count} saved measurements</Text>
       <Line data={dataSet} options={optionChart} />
     </div>

@@ -8,10 +8,10 @@ export const Middle = ({ setNewMeasurementsHistory, measurementsHistory }) => {
   const { width } = useWindowDimensions()
   return (
     <div className={`middle ${width > dimension() && 'middle-desktop'}`}>
-      <div className={`border-line ${width > dimension() && 'border-line-desktop'}`}>
-        <Data setNewMeasurementsHistory={setNewMeasurementsHistory} />
-        <Chart measurementsHistory={measurementsHistory} />
-      </div>
+      {/*<div className={`border-line ${width > dimension() && 'border-line-desktop'}`}>*/}
+      <Data setNewMeasurementsHistory={setNewMeasurementsHistory} />
+      <Chart measurementsHistory={measurementsHistory} />
+      {/*</div>*/}
     </div>
   )
 }
