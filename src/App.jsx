@@ -13,23 +13,53 @@ export const App = () => {
   const getDate = () => {
     return moment().format('DD.MM.YYYY')
   }
-  const addNewBmiItem = (bmi) => {
-    const newBmiList = [
+
+  const measurements = [
+    { date: '24.01.2023', value: '17.63' },
+    { date: '24.02.2023', value: '18.94' },
+    { date: '24.03.2023', value: '9.84' },
+    { date: '24.04.2023', value: '2.40' },
+    { date: '24.05.2023', value: '2.88' },
+    { date: '24.06.2023', value: '24.00' },
+    { date: '24.07.2023', value: '28.80' },
+  ]
+  const checkIfTheDateIsInTheListAndOverwriteTheData = (bmi) => {
+    if (!bmi) return
+    const date = getDate()
+    const checkDate = measurementsHistory.find((element) => element.date === date)
+    let newMeasurementsHistory
+    if (!checkDate) {
+      newMeasurementsHistory = addNewBmiItem(bmi, date)
+    } else
+      newMeasurementsHistory = measurementsHistory.map((element) => {
+        if (element.date === date) return { ...element, value: bmi }
+        else return element
+      })
+    setMeasurementsHistory(newMeasurementsHistory)
+    helpersStorageBmi(newMeasurementsHistory)
+  }
+
+  const helpersStorageBmi = (newMeasurementsHistory) => {
+    window.localStorage.setItem('BMI-list', JSON.stringify(newMeasurementsHistory))
+  }
+
+  const addNewBmiItem = (bmi, date) => {
+    return [
       ...measurementsHistory,
       {
-        date: getDate(),
+        date: date,
         value: bmi,
       },
     ]
-    console.log(newBmiList)
-    setMeasurementsHistory(newBmiList)
-    window.localStorage.setItem('BMI-list', JSON.stringify(newBmiList))
   }
 
   return (
     <div className={'App'}>
       <Header />
-      <Middle addNewBmiItem={addNewBmiItem} measurementsHistory={measurementsHistory} />
+      <Middle
+        addNewBmiItem={checkIfTheDateIsInTheListAndOverwriteTheData}
+        measurementsHistory={measurementsHistory}
+      />
       <Accounts />
     </div>
   )

@@ -33,14 +33,11 @@ export const Chart = ({ measurementsHistory }) => {
   const labels = measurements.map((item) => item.date)
   const dataValue = measurements.map((item) => item.value)
   const count = labels.length.toString()
-  console.log(count)
 
   const dataSet = {
     labels,
     datasets: [
       {
-        xAxisID: 'xAxis',
-        yAxisID: 'yAxis',
         label: 'Dataset',
         data: dataValue,
         borderWidth: 2,
@@ -58,9 +55,18 @@ export const Chart = ({ measurementsHistory }) => {
 
   const options = {
     options: {
+      scaleShowGridLines: true,
       scales: {
-        xAxis: {
-          gridLines: {
+        x: {
+          min: -1,
+          grid: {
+            color: '#DC483E',
+            lineWidth: 2,
+          },
+        },
+        y: {
+          max: 40,
+          grid: {
             color: '#DC483E',
             lineWidth: 2,
           },
@@ -74,9 +80,8 @@ export const Chart = ({ measurementsHistory }) => {
         display: true,
         text: `Last ${count} saved measurements`,
         font: {
-          size: 20,
+          size: 15,
           family: 'Rubik',
-          style: 'regular',
         },
       },
     },
