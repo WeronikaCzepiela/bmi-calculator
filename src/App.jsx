@@ -7,24 +7,29 @@ import {
   addNewMeasure,
   changeMeasure,
   getDate,
-  helpersStorageBmi,
+  getMeasurementsFromLocalStorage,
   isMeasureFromTheDate,
+  saveMeasurementsToLocalStorage,
 } from './App.helpers'
 
 export const App = () => {
-  const [measurementsHistory, setMeasurementsHistory] = useState([
-    JSON.parse(window.localStorage.getItem('BMI-list')),
-  ])
+  const [measurementsHistory, setMeasurementsHistory] = useState(getMeasurementsFromLocalStorage())
 
   const setNewMeasurementsHistory = (bmi) => {
     if (!bmi) return
+
     const date = getDate()
     let newMeasurementsHistory
+
+    console.log('dupa')
     if (!isMeasureFromTheDate(measurementsHistory, date)) {
       newMeasurementsHistory = addNewMeasure(measurementsHistory, bmi, date)
-    } else newMeasurementsHistory = changeMeasure(measurementsHistory, bmi, date)
+    } else {
+      newMeasurementsHistory = changeMeasure(measurementsHistory, bmi, date)
+    }
+
     setMeasurementsHistory(newMeasurementsHistory)
-    helpersStorageBmi(newMeasurementsHistory)
+    saveMeasurementsToLocalStorage(newMeasurementsHistory)
   }
 
   return (

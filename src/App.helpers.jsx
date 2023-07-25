@@ -24,6 +24,12 @@ export const changeMeasure = (measurementsHistory, bmi, date) => {
   })
 }
 
-export const helpersStorageBmi = (newMeasurementsHistory) => {
+export const saveMeasurementsToLocalStorage = (newMeasurementsHistory) => {
   window.localStorage.setItem('BMI-list', JSON.stringify(newMeasurementsHistory))
+}
+
+export const getMeasurementsFromLocalStorage = () => {
+  const historyMeasurements = JSON.parse(window.localStorage.getItem('BMI-list'))
+  if (historyMeasurements) return historyMeasurements
+  return []
 }
