@@ -1,6 +1,8 @@
-export const optionsSex = [
-  { value: 'male', label: 'Male' },
-  { value: 'female', label: 'Female' },
+import { useTranslation } from 'react-i18next'
+
+export const optionsSex = (t) => [
+  { value: 'male', label: t('male') },
+  { value: 'female', label: t('female') },
 ]
 
 export const optionsHeight = [

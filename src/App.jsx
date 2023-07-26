@@ -11,6 +11,7 @@ import {
   isMeasureFromTheDate,
   saveMeasurementsToLocalStorage,
 } from './App.helpers'
+import './utils/i18.config'
 
 export const App = () => {
   const [measurementsHistory, setMeasurementsHistory] = useState(getMeasurementsFromLocalStorage())

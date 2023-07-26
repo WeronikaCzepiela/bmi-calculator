@@ -9,8 +9,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { inchToCm, poundToKg, schema } from './Data.helpers'
 import { Result } from '../Result/Result'
 import { Save } from '../Save/Save'
-import { useState } from 'react'
-import moment from 'moment'
+import { useTranslation } from 'react-i18next'
 
 export const Data = ({ setNewMeasurementsHistory }) => {
   const {
@@ -45,26 +44,28 @@ export const Data = ({ setNewMeasurementsHistory }) => {
   }
 
   const bmi = calculateBmi()
+  const { t } = useTranslation()
+  const optionSex = optionsSex(t)
 
   return (
     <div className={'data-and-result'}>
       <div className={'data'}>
-        <Text type={'h2'}>Parameters</Text>
-        <SelectInputForm label={'Sex'} options={optionsSex} control={control} name={'sex'} />
+        <Text type={'h2'}>{t('parameters')}</Text>
+        <SelectInputForm label={t('sex')} options={optionSex} control={control} name={'sex'} />
         <RadioGroupForm
-          label={'Height unit'}
+          label={t('height_unit')}
           options={optionsHeight}
           name={'height_unit'}
           control={control}
         />
-        <TextInputForm label={'Height'} name={'height'} control={control} />
+        <TextInputForm label={t('height')} name={'height'} control={control} />
         <RadioGroupForm
-          label={'Weight unit'}
+          label={t('weight_unit')}
           options={optionsWeight}
           name={'weight_unit'}
           control={control}
         />
-        <TextInputForm label={'Weight'} name={'weight'} control={control} />
+        <TextInputForm label={t('weight')} name={'weight'} control={control} />
       </div>
       {bmi && <Result BMI={bmi} />}
       <Save setNewMeasurementsHistory={() => setNewMeasurementsHistory(bmi)} />

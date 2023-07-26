@@ -14,9 +14,12 @@ import { colorResult, getDateData, getValueData, optionChart } from './Chart.hel
 import { Text } from '../Text/Text'
 import { useWindowDimensions } from '../../utils/hookers/useWindowDimensions'
 import { dimension } from '../../utils/Dimension'
+import { Trans, useTranslation } from 'react-i18next'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip)
 export const Chart = ({ measurementsHistory }) => {
+  const { t } = useTranslation()
+
   const measurements = [
     { date: '24.01.2023', value: '17.63' },
     { date: '24.02.2023', value: '18.94' },
@@ -54,7 +57,7 @@ export const Chart = ({ measurementsHistory }) => {
 
   return (
     <div className={`chart ${width > dimension() && 'chart-desktop'}`}>
-      <Text type={'t'}>Last {count} saved measurements</Text>
+      <Text type={'t'}> {t('title', { count: count })}</Text>
       <Line data={dataSet} options={optionChart} />
     </div>
   )
