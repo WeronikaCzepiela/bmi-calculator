@@ -2,6 +2,10 @@
 .radio-group {
   width: 300px;
   margin: 12px 0;
+
+  &-desktop {
+    margin: 6px 0;
+  }
 }
 
 .radio-option {

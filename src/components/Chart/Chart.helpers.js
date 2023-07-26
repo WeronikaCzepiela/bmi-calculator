@@ -34,16 +34,4 @@ export const optionChart = {
       },
     },
   },
-  // plugins: {
-  //     title: {
-  //         width: 200,
-  //         color: '#FBFBFD',
-  //         display: true,
-  //         text: `Last ${count} saved measurements`,
-  //         font: {
-  //             size: 15,
-  //             family: 'Rubik',
-  //         },
-  //     },
-  // },
 }

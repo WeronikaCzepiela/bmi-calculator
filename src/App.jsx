@@ -21,7 +21,6 @@ export const App = () => {
     const date = getDate()
     let newMeasurementsHistory
 
-    console.log('dupa')
     if (!isMeasureFromTheDate(measurementsHistory, date)) {
       newMeasurementsHistory = addNewMeasure(measurementsHistory, bmi, date)
     } else {

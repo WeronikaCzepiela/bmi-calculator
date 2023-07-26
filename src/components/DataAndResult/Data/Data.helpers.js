@@ -19,7 +19,7 @@ export const schema = z
     height_unit: z.string().nonempty(),
     weight_unit: z.string().nonempty(),
   })
-  .superRefine(({ height, height_unit, weight_unit, weight }, ctx) => {
+  .superRefine(({ sex, height, height_unit, weight_unit, weight }, ctx) => {
     const heightNumber = parseInt(height)
     const weightNumber = parseInt(weight)
 
@@ -47,5 +47,8 @@ export const schema = z
       (weightNumber > kgToPounds(1000) && weight_unit === 'pound')
     ) {
       ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'Too big', path: ['weight'] })
+    }
+    if (!sex && weight && height) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'It is required', path: ['sex'] })
     }
   })
