@@ -1,5 +1,3 @@
-import { useTranslation } from 'react-i18next'
-
 export const optionsSex = (t) => [
   { value: 'male', label: t('male') },
   { value: 'female', label: t('female') },
