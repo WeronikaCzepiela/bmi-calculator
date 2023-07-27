@@ -1,10 +1,10 @@
-import './Middle.scss'
+import './BmiCalculator.scss'
 import { Chart } from '../Chart/Chart'
 import { Data } from '../DataAndResult/Data/Data'
 import { useWindowDimensions } from '../../utils/hookers/useWindowDimensions'
 import { dimension } from '../../utils/Dimension'
 
-export const Middle = ({ setNewMeasurementsHistory, measurementsHistory }) => {
+export const BmiCalculator = ({ setNewMeasurementsHistory, measurementsHistory }) => {
   const { width } = useWindowDimensions()
 
   return (

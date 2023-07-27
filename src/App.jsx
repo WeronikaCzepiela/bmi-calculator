@@ -1,6 +1,6 @@
 import './App.scss'
 import { Header } from './components/Header/Header'
-import { Middle } from './components/Middle/Middle'
+import { BmiCalculator } from './components/BmiCalculator/BmiCalculator'
 import { Accounts } from './components/Accounts/Accounts'
 import { useState } from 'react'
 import {
@@ -12,9 +12,18 @@ import {
   saveMeasurementsToLocalStorage,
 } from './App.helpers'
 import './utils/i18.config'
+import { createBrowserRouter, Route, Routes } from 'react-router-dom'
+import { BmiDescription } from './components/BmiDescription/BmiDescription'
 
 export const App = () => {
   const [measurementsHistory, setMeasurementsHistory] = useState(getMeasurementsFromLocalStorage())
+
+  const router = createBrowserRouter([
+    {
+      path: '/bmi-calculator',
+      element: <div>Hello world!</div>,
+    },
+  ])
 
   const setNewMeasurementsHistory = (bmi) => {
     if (!bmi) return
@@ -35,10 +44,18 @@ export const App = () => {
   return (
     <div className={'App'}>
       <Header />
-      <Middle
-        setNewMeasurementsHistory={setNewMeasurementsHistory}
-        measurementsHistory={measurementsHistory}
-      />
+      <Routes>
+        <Route
+          path={'/'}
+          element={
+            <BmiCalculator
+              setNewMeasurementsHistory={setNewMeasurementsHistory}
+              measurementsHistory={measurementsHistory}
+            />
+          }
+        />
+        <Route path={'/what-is-bmi'} element={<BmiDescription />} />
+      </Routes>
       <Accounts />
     </div>
   )

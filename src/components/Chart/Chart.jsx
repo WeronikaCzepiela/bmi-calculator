@@ -57,7 +57,7 @@ export const Chart = ({ measurementsHistory }) => {
 
   return (
     <div className={`chart ${width > dimension() && 'chart-desktop'}`}>
-      <Text type={'t'}> {t('title', { count: count })}</Text>
+      <Text type={'t'}> {t('title', { count: 2 })}</Text>
       <Line data={dataSet} options={optionChart} />
     </div>
   )

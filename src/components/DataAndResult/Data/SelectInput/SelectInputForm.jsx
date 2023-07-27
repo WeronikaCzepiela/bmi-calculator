@@ -1,6 +1,5 @@
 import { Controller } from 'react-hook-form'
 import { SelectInput } from './SelectInput'
-import { useTranslation } from 'react-i18next'
 
 export const SelectInputForm = (props) => {
   return (
