@@ -15,11 +15,9 @@ const translationPl = {
   check_my_accounts: 'Sprawdź moje konta',
   male: 'Mężczyzna',
   female: 'Kobieta',
-
   title_one: 'Ostatni zapisany pomiar',
   title_few: 'Ostatnie {{count}} zapisane pomiary',
   title_many: 'Ostatnie {{count}} zapisanych pomiarów',
-
   inch: 'cal',
   pound: 'funt',
 }
