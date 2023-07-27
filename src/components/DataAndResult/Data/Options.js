@@ -5,12 +5,12 @@ export const optionsSex = (t) => [
   { value: 'female', label: t('female') },
 ]
 
-export const optionsHeight = [
+export const optionsHeight = (t) => [
   { label: 'cm', value: 'cm' },
-  { label: 'inch', value: 'inch' },
+  { label: t('inch'), value: 'inch' },
 ]
 
-export const optionsWeight = [
+export const optionsWeight = (t) => [
   { label: 'kg', value: 'kg' },
-  { label: 'pound', value: 'pound' },
+  { label: t('pound'), value: 'pound' },
 ]

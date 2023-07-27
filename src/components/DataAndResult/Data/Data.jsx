@@ -46,7 +46,11 @@ export const Data = ({ setNewMeasurementsHistory }) => {
   const bmi = calculateBmi()
   const { t } = useTranslation()
   const optionSex = optionsSex(t)
+  const optionWeight = optionsWeight(t)
+  const optionHeight = optionsHeight(t)
 
+  console.log(optionSex)
+  console.log(optionWeight)
   return (
     <div className={'data-and-result'}>
       <div className={'data'}>
@@ -54,14 +58,14 @@ export const Data = ({ setNewMeasurementsHistory }) => {
         <SelectInputForm label={t('sex')} options={optionSex} control={control} name={'sex'} />
         <RadioGroupForm
           label={t('height_unit')}
-          options={optionsHeight}
+          options={optionHeight}
           name={'height_unit'}
           control={control}
         />
         <TextInputForm label={t('height')} name={'height'} control={control} />
         <RadioGroupForm
           label={t('weight_unit')}
-          options={optionsWeight}
+          options={optionWeight}
           name={'weight_unit'}
           control={control}
         />

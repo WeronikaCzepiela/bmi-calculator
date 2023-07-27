@@ -16,6 +16,8 @@ const translationPl = {
   male: 'Mężczyzna',
   female: 'Kobieta',
   title: 'Ostatnie zapisane pomiary',
+  inch: 'cal',
+  pound: 'funt',
 }
 
 const translationEn = {
@@ -34,6 +36,8 @@ const translationEn = {
   female: 'Female',
   title: 'Last {{count}} saved measurement',
   title_other: 'Last {{count}} saved measurements',
+  inch: 'inch',
+  pound: 'pound',
 }
 
 const translationEs = {
@@ -51,6 +55,8 @@ const translationEs = {
   male: 'Hombre',
   female: 'Mujer',
   title: 'Últimas mediciones registradas',
+  inch: 'pulgada',
+  pound: 'libra',
 }
 
 i18n.use(initReactI18next).init({
