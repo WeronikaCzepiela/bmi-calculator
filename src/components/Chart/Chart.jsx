@@ -28,6 +28,11 @@ export const Chart = ({ measurementsHistory }) => {
     { date: '24.05.2023', value: '2.88' },
     { date: '24.06.2023', value: '24.00' },
     { date: '24.07.2023', value: '28.80' },
+    { date: '24.08.2023', value: '2.88' },
+    { date: '24.09.2023', value: '24.00' },
+    { date: '24.10.2023', value: '28.80' },
+    { date: '24.11.2023', value: '24.00' },
+    { date: '24.12.2023', value: '28.80' },
   ]
 
   const dateData = getDateData(measurements)
@@ -57,7 +62,7 @@ export const Chart = ({ measurementsHistory }) => {
 
   return (
     <div className={`chart ${width > dimension() && 'chart-desktop'}`}>
-      <Text type={'t'}> {t('title', { count: 2 })}</Text>
+      <Text type={'t'}> {t('title', { count: count })}</Text>
       <Line data={dataSet} options={optionChart} />
     </div>
   )
