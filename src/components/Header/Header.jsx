@@ -2,6 +2,7 @@ import './Header.scss'
 import { Text } from '../Text/Text'
 import { useTranslation } from 'react-i18next'
 import i18n from 'i18next'
+import { Link } from 'react-router-dom'
 
 const onChangeLanguage = (event) => {
   i18n.changeLanguage(event.target.value)
@@ -12,14 +13,20 @@ export const Header = () => {
 
   return (
     <div className={'header'}>
-      <div className={'calculator'}>
-        <Text>{t('bmi_calculator')}</Text>
-        <div className={'line'}></div>
-      </div>
-      <div className={'description'}>
-        <Text>{t('what_is_bmi')}</Text>
-        <div className={'line'}></div>
-      </div>
+      <nav className={'navigation_buttons'}>
+        <div className={'calculator'}>
+          <Link to={'/'} className={'link'}>
+            <Text>{t('bmi_calculator')}</Text>
+            <div className={'line'}></div>
+          </Link>
+        </div>
+        <div className={'description'}>
+          <Link to={'/what-is-bmi'} className={'link'}>
+            <Text>{t('what_is_bmi')}</Text>
+            <div className={'line'}></div>
+          </Link>
+        </div>
+      </nav>
       <select id='language' onChange={onChangeLanguage}>
         <option value={'pl'} className={'pl'}>
           PL

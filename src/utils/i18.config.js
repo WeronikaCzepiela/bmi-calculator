@@ -20,6 +20,21 @@ const translationPl = {
   title_many: 'Ostatnie {{count}} zapisanych pomiarów',
   inch: 'cal',
   pound: 'funt',
+  description:
+    'BMI to skrót od Body Mass Index (wskaźnik masy ciała). Jest to wartość liczbowa pochodząca od wzrostu i wagi danej osoby.\n' +
+    '          wzrostu i wagi i jest powszechnie stosowana do oceny, czy dana osoba ma zdrową masę ciała w stosunku do swojego wzrostu.\n' +
+    '          w stosunku do swojego wzrostu. BMI to szybki i łatwy sposób na oszacowanie, czy\n' +
+    '          ktoś ma niedowagę, normalną wagę, nadwagę lub jest otyły.',
+  too_low: 'Wartość poniżej 17 wskazuje na wychudzenie.',
+  low: 'Wartość mieszcząca się w zakresie: 17 - 18,5 wskazuje na\n' + '            niedowagę.',
+  normal: 'Wartość mieszcząca się w zakresie: 18,5 - 25 jest wartością prawidłową.',
+  high: 'Wartość mieszcząca się w zakresie: 25 - 30 wskazuje na nadwagę.',
+  too_high: 'Wartość większa niż 30 oznacza otyłość.',
+  too_low_text: 'Masz za niskie BMI =',
+  low_text: 'Masz trochę za niskie BMI =',
+  normal_text: 'Masz dobre BMI =',
+  high_text: 'Masz trochę za wysokie BMI =',
+  too_high_text: 'Masz za wysokie BMI =',
 }
 
 const translationEn = {
@@ -40,6 +55,22 @@ const translationEn = {
   title_other: 'Last {{count}} saved measurements',
   inch: 'inch',
   pound: 'pound',
+  description:
+    "BMI stands for Body Mass Index. It is a numerical value derived from an individual's\n" +
+    '          height and weight and is commonly used to assess whether a person has a healthy body\n' +
+    '          weight in relation to their height. BMI is a quick and easy way to estimate whether\n' +
+    '          someone is underweight, normal weight, overweight, or obese.',
+  too_low: 'A value less than 17 indicates emaciation.',
+  low:
+    "A value that falls within the range: 17 - 18.5, indicates\\n' +\n" + '          underweight.',
+  normal: 'A value that falls within the range: 18.5 - 25 is the correct value. ',
+  high: 'A value that falls within the range: 25 - 30 indicates overweight.',
+  too_high: 'A value greater than 30 speaks of obesity.',
+  too_low_text: 'You have too low BMI =',
+  low_text: 'You have a little too low BMI =',
+  normal_text: 'You have good BMI =',
+  high_text: 'You have a little too high BMI =',
+  too_high_text: 'You have too high BMI =',
 }
 
 const translationEs = {
@@ -59,6 +90,21 @@ const translationEs = {
   title: 'Últimas mediciones registradas',
   inch: 'pulgada',
   pound: 'libra',
+  description:
+    'IMC son las siglas de Índice de Masa Corporal. Es un valor numérico derivado de la altura y el peso de una persona.\n' +
+    '          peso de una persona y se suele utilizar para evaluar si una persona tiene un peso\n' +
+    '          en relación con su estatura. El IMC es una forma rápida y sencilla de estimar si\n' +
+    '          si una persona tiene un peso inferior al normal, un peso normal, sobrepeso u obesidad.',
+  too_low: 'Un valor inferior a 17 indica emaciación.',
+  low: 'Un valor que cae dentro del rango 17 - 18,5, por otra parte, indica bajo peso.',
+  normal: 'Un valor que esté dentro del intervalo 18,5 - 25 es el valor correcto.',
+  high: 'Un valor comprendido entre 25 y 30 indica sobrepeso.',
+  too_high: 'Un valor superior a 30 habla de obesidad.',
+  too_low_text: 'Tienes un IMC demasiado bajo =',
+  low_text: 'Tienes un IMC un poco bajo =',
+  normal_text: 'Tienes un buen IMC =',
+  high_text: 'Tienes un IMC un poco alto =',
+  too_high_text: 'Tienes un IMC demasiado alto =',
 }
 
 i18n.use(initReactI18next).init({

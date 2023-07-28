@@ -48,7 +48,7 @@ export const schema = z
     ) {
       ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'Too big', path: ['weight'] })
     }
-    if (!sex && weight && height) {
+    if (!sex && weight !== '' && height !== '') {
       ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'It is required', path: ['sex'] })
     }
   })
