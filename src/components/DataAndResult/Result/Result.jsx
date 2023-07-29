@@ -1,6 +1,6 @@
 import './Result.scss'
 import { Text } from '../../Text/Text'
-import Check from './check.png'
+import Check from '../../../assets/check.png'
 import { colorResult, textOnResult } from './Result.helpers'
 import { useTranslation } from 'react-i18next'
 
