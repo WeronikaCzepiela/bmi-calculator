@@ -14,7 +14,7 @@ export const SelectInput = ({ options, label, onChange, value }) => {
   }
 
   const defaultValue = () => {
-    if (value === '') return
+    if (value === '') return undefined
     if (value === 'male') return options[0]
     else return options[1]
   }

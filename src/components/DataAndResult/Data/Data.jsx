@@ -6,12 +6,14 @@ import { RadioGroupForm } from './RadioGroup/RadioGroupForm'
 import { SelectInputForm } from './SelectInput/SelectInputForm'
 import { optionsHeight, optionsSex, optionsWeight } from './Options'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { inchToCm, poundToKg, schema } from './Data.helpers'
+import { inchToCm, poundToKg, schema, schemaFunction } from './Data.helpers'
 import { Result } from '../Result/Result'
 import { Save } from '../Save/Save'
 import { useTranslation } from 'react-i18next'
 
 export const Data = ({ setNewMeasurementsHistory }) => {
+  const { t } = useTranslation()
+
   const {
     control,
     getValues,
@@ -26,7 +28,7 @@ export const Data = ({ setNewMeasurementsHistory }) => {
       weight_unit: 'kg',
       weight: '',
     },
-    resolver: zodResolver(schema),
+    resolver: zodResolver(schema(t)),
   })
 
   const calculateBmi = () => {
@@ -42,15 +44,11 @@ export const Data = ({ setNewMeasurementsHistory }) => {
       return bmi.toFixed(2)
     } else return
   }
-
   const bmi = calculateBmi()
-  const { t } = useTranslation()
   const optionSex = optionsSex(t)
   const optionWeight = optionsWeight(t)
   const optionHeight = optionsHeight(t)
 
-  console.log(optionSex)
-  console.log(optionWeight)
   return (
     <div className={'data-and-result'}>
       <div className={'data'}>

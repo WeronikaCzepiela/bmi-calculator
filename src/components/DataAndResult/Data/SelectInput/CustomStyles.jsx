@@ -27,11 +27,18 @@ export const customStyles = {
     borderRadius: 6,
   }),
 
+  input: (defaultStyles, state) => ({
+    ...defaultStyles,
+    defaultStyles,
+    color: '#418899',
+  }),
+
   control: (defaultStyles, state) => ({
     ...defaultStyles,
     defaultStyles,
     backgroundColor: '#101019',
     borderColor: '#353542',
     borderRadius: 6,
+    color: state.isSelected ? '#AAAABF' : '#AAAABF',
   }),
 }

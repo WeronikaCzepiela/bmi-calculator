@@ -35,6 +35,8 @@ const translationPl = {
   normal_text: 'Masz dobre BMI =',
   high_text: 'Masz trochę za wysokie BMI =',
   too_high_text: 'Masz za wysokie BMI =',
+  too_small: 'Za mało',
+  too_big: 'Za dużo',
 }
 
 const translationEn = {
@@ -71,6 +73,8 @@ const translationEn = {
   normal_text: 'You have good BMI =',
   high_text: 'You have a little too high BMI =',
   too_high_text: 'You have too high BMI =',
+  too_small: 'Too small',
+  too_big: 'Too big',
 }
 
 const translationEs = {
@@ -105,6 +109,8 @@ const translationEs = {
   normal_text: 'Tienes un buen IMC =',
   high_text: 'Tienes un IMC un poco alto =',
   too_high_text: 'Tienes un IMC demasiado alto =',
+  too_small: 'Demasiado pequeño',
+  too_big: 'Demasiado grande',
 }
 
 i18n.use(initReactI18next).init({
