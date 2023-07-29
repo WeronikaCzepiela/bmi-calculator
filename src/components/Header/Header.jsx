@@ -24,7 +24,9 @@ export const Header = () => {
           </Link>
         </div>
       </nav>
-      <LanguagePicker />
+      <div className={'flags_picker'}>
+        <LanguagePicker />
+      </div>
     </div>
   )
 }

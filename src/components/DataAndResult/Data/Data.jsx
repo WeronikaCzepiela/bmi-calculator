@@ -20,7 +20,7 @@ export const Data = ({ setNewMeasurementsHistory }) => {
   } = useForm({
     mode: 'onChange',
     defaultValues: {
-      sex: '',
+      sex: 'male',
       height_unit: 'cm',
       height: '',
       weight_unit: 'kg',
