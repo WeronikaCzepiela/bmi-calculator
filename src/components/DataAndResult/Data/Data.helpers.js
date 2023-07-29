@@ -15,7 +15,7 @@ export const schema = z
   .object({
     height: z.string(),
     weight: z.string(),
-    sex: z.string(),
+    sex: z.string().nonempty(),
     height_unit: z.string().nonempty(),
     weight_unit: z.string().nonempty(),
   })
@@ -47,8 +47,5 @@ export const schema = z
       (weightNumber > kgToPounds(1000) && weight_unit === 'pound')
     ) {
       ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'Too big', path: ['weight'] })
-    }
-    if (!sex && weight !== '' && height !== '') {
-      ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'It is required', path: ['sex'] })
     }
   })

@@ -3,10 +3,7 @@ import { Text } from '../Text/Text'
 import { useTranslation } from 'react-i18next'
 import i18n from 'i18next'
 import { Link } from 'react-router-dom'
-
-const onChangeLanguage = (event) => {
-  i18n.changeLanguage(event.target.value)
-}
+import { LanguagePicker } from '../LanguagePicker/LanguagePicker'
 
 export const Header = () => {
   const { t } = useTranslation()
@@ -27,17 +24,7 @@ export const Header = () => {
           </Link>
         </div>
       </nav>
-      <select id='language' onChange={onChangeLanguage}>
-        <option value={'pl'} className={'pl'}>
-          PL
-        </option>
-        <option value={'en'} className={'en'}>
-          EN
-        </option>
-        <option value={'es'} className={'es'}>
-          ES
-        </option>
-      </select>
+      <LanguagePicker />
     </div>
   )
 }

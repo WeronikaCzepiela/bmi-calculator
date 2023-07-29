@@ -35,22 +35,6 @@ export const App = () => {
     saveMeasurementsToLocalStorage(newMeasurementsHistory)
   }
 
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: (
-        <BmiCalculator
-          setNewMeasurementsHistory={setNewMeasurementsHistory}
-          measurementsHistory={measurementsHistory}
-        />
-      ),
-    },
-    {
-      path: '/what-is-bmi',
-      element: <BmiDescription />,
-    },
-  ])
-
   return (
     <div className={'App'}>
       <Header />
