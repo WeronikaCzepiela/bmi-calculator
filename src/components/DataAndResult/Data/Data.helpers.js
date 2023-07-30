@@ -25,29 +25,29 @@ export const schema = (t) => {
       const weightNumber = parseInt(weight)
 
       if (
-        (heightNumber < 100 && height_unit === 'cm') ||
-        (heightNumber < 39 && height_unit === 'inch')
+        (heightNumber <= 100 && height_unit === 'cm') ||
+        (heightNumber <= 39 && height_unit === 'inch')
       ) {
         ctx.addIssue({ code: z.ZodIssueCode.custom, message: t('too_small'), path: ['height'] })
       }
       if (
-        (heightNumber > 350 && height_unit === 'cm') ||
-        (heightNumber > 138 && height_unit === 'inch')
+        (heightNumber >= 350 && height_unit === 'cm') ||
+        (heightNumber >= 138 && height_unit === 'inch')
       ) {
-        ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'Too big', path: ['height'] })
+        ctx.addIssue({ code: z.ZodIssueCode.custom, message: t('too_big'), path: ['height'] })
       }
 
       if (
-        (weightNumber < 10 && weight_unit === 'kg') ||
-        (weightNumber < kgToPounds(10) && weight_unit === 'pound')
+        (weightNumber <= 10 && weight_unit === 'kg') ||
+        (weightNumber <= kgToPounds(10) && weight_unit === 'pound')
       ) {
         ctx.addIssue({ code: z.ZodIssueCode.custom, message: t('too_small'), path: ['weight'] })
       }
       if (
-        (weightNumber > 1000 && weight_unit === 'kg') ||
-        (weightNumber > kgToPounds(1000) && weight_unit === 'pound')
+        (weightNumber >= 1000 && weight_unit === 'kg') ||
+        (weightNumber >= kgToPounds(1000) && weight_unit === 'pound')
       ) {
-        ctx.addIssue({ code: z.ZodIssueCode.custom, message: 'Too big', path: ['weight'] })
+        ctx.addIssue({ code: z.ZodIssueCode.custom, message: t('too_big'), path: ['weight'] })
       }
     })
 }

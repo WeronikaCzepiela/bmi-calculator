@@ -27,7 +27,7 @@ export const customStyles = {
     borderRadius: 6,
   }),
 
-  input: (defaultStyles, state) => ({
+  selectedOptions: (defaultStyles, state) => ({
     ...defaultStyles,
     defaultStyles,
     color: '#418899',
