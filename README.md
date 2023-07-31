@@ -25,3 +25,5 @@ On the other hand, at the bottom of the page, there are references to the author
 
 ##  Application layout
 
+Below are screenshots showing the layout of the application. 
+
