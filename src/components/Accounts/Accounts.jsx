@@ -1,6 +1,6 @@
 import './Accounts.scss'
-import LinkedIn from './images/LinkedIn.png'
-import GitHub from './images/GitHub.png'
+import LinkedIn from '../../assets/LinkedIn.png'
+import GitHub from '../../assets/GitHub.png'
 import { useWindowDimensions } from '../../utils/hookers/useWindowDimensions'
 import { dimension } from '../../utils/Dimension'
 import { useTranslation } from 'react-i18next'
