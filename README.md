@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# BMI Calculator 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application that allows users to measure BMI, save the result, and compare their measurements with previous ones.
 
-## Available Scripts
+## Description
+This is an application that is used to measure BMI. There are two tabs at the top of the page. In the target tab - 'BMI Calculator' - the user can count his BMI. On the other hand, the 'What is BMI?' tab describes BMI itself, along with a breakdown of the result into normal or abnormal.
+To count BMI, the user must fill out a form. It consists of selecting your gender and entering your height and weight. In addition, the user can change the unit in which he gives his height or weight. If the height/weight value is too small or too large, the message 'Too small'/'Too big' is displayed below. After completing the form, the calculated BMI is displayed along with an interpretation of whether the result is correct.
+The user can save his or her result, in which case a graph of the measured BMI will appear along with the date of measurement. With the graph, one can observe the changes in one's BMI over the recent past.
+On the other hand, at the bottom of the page, there are references to the author's accounts. 
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+* The entire application is available in Polish (target language), English, or Spanish.
+* Changing the language is available by clicking on the corresponding flag, which is located in the upper right corner.
+* When clicking 'What is BMI?', the user is taken to another tab. There is a description of BMI along with its interpretation. After clicking 'BMI Calculator', the user is taken to a tab with a form. The two captions are at the top of the page.
+* When entering a height or weight value that is too small or too large, error messages appear.
+* Gender is initially marked as 'male'.
+* Weight/length units can be changed by selecting the desired measure.
+* After completing the form, the calculated BMI appears with a message about whether it is correct. Depending on the interpretation, the color of the window that appears changes.
+* The BMI value is saved when the button is pressed. If the user saves a second or subsequent result during the day, the data is overwritten.
+* The save button changes its appearance when hovered over or pressed.
+* The graph of the BMI measured so far, only appears on the page if the user saves at least one result.
+* The color of the markers on the graph depends on the size of the measured BMI.
+* In Polish and English, the title of the chart changes depending on the value of the recorded results - a different syntax is used for plurals.* At the bottom of the page there are references to the author's pages. After clicking on the selected icon, the user is redirected to the corresponding page.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##  Application layout
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
