@@ -25,5 +25,34 @@ On the other hand, at the bottom of the page, there are references to the author
 
 ##  Application layout
 
-Below are screenshots showing the layout of the application. 
+Below are screenshots showing the layout of the application. The screenshots are in Polish and English.
 
+* First entry into the application.
+
+<img src="./images/start.PNG">
+
+* Completing the form.
+
+<img src="images/form.PNG">
+
+* BMI description tab. 
+
+<img src="./images/what-is-bmi.PNG">
+
+* Window with calculated BMI. 
+
+<img src="./images/result-button.PNG">
+
+* Chart with different translation depending on the number of recorded results. 
+
+<img src="./images/chart_en.PNG">
+<img src="images/chart_pl.PNG">
+
+* Form pop-up errors. 
+
+<img src="./images/errors.PNG">
+
+* Mobile version. 
+
+<img src="./images/mobile_1.PNG">
+<img src="./images/mobile_2.PNG">
