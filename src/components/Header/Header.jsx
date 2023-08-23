@@ -1,7 +1,6 @@
 import './Header.scss'
 import { Text } from '../Text/Text'
 import { useTranslation } from 'react-i18next'
-import i18n from 'i18next'
 import { Link } from 'react-router-dom'
 import { LanguagePicker } from '../LanguagePicker/LanguagePicker'
 
