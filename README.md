@@ -21,7 +21,7 @@ On the other hand, at the bottom of the page, there are references to the author
 * The save button changes its appearance when hovered over or pressed.
 * The graph of the BMI measured so far, only appears on the page if the user saves at least one result.
 * The color of the markers on the graph depends on the size of the measured BMI.
-* In Polish and English, the title of the chart changes depending on the value of the recorded results - a different syntax is used for plurals.* At the bottom of the page there are references to the author's pages. After clicking on the selected icon, the user is redirected to the corresponding page.
+* In Polish and English, the title of the chart changes depending on the value of the recorded results - a different syntax is used for plurals.* At the bottom of the page there are references to the author's pages. After clicking on the selected icon, the user is redirected to the corresponding page. 
 
 ##  Application layout
 
