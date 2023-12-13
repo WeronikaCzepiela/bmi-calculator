@@ -56,3 +56,7 @@ Below are screenshots showing the layout of the application. The screenshots are
 
 <img src="./images/mobile_1.PNG">
 <img src="./images/mobile_2.PNG">
+
+## How to run?
+
+`npm run start` to start project 
