@@ -1,6 +1,6 @@
 # BMI Calculator 
 
-A web application that allows users to measure BMI, save the result, and compare their measurements with previous ones.
+A web application that allows users to measure BMI, save the result, and also compare their measurements with previous ones.
 
 ## Description
 This is an application that is used to measure BMI. There are two tabs at the top of the page. In the target tab - 'BMI Calculator' - the user can count his BMI. On the other hand, the 'What is BMI?' tab describes BMI itself, along with a breakdown of the result into normal or abnormal.
