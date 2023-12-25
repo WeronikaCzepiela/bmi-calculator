@@ -34,6 +34,8 @@ export const App = () => {
     saveMeasurementsToLocalStorage(newMeasurementsHistory)
   }
 
+
+console.log(measurementsHistory) 
   return (
     <div className={'App'}>
       <Header />
