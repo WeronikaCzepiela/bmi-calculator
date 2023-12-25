@@ -45,7 +45,6 @@ export const App = () => {
             <BmiCalculator
               setNewMeasurementsHistory={setNewMeasurementsHistory}
               measurementsHistory={measurementsHistory}
-console.log(measurementsHistory) 
             />
           }
         />
