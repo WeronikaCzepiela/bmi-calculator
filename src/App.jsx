@@ -31,7 +31,8 @@ export const App = () => {
       newMeasurementsHistory = changeMeasure(measurementsHistory, bmi, date)
     }
 
-    setMeasurementsHistory(newMeasurementsHistory)
+
+console.log(measurementsHistory)    setMeasurementsHistory(newMeasurementsHistory)
     saveMeasurementsToLocalStorage(newMeasurementsHistory)
   }
 
