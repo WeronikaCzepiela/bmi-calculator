@@ -3,6 +3,7 @@
 A web application that allows users to measure BMI, save the result, and compare their measurements with previous ones.
 
 ## Description
+
 This is an application that is used to measure BMI. There are two tabs at the top of the page. In the target tab - 'BMI Calculator' - the user can count his BMI. On the other hand, the 'What is BMI?' tab describes BMI itself, along with a breakdown of the result into normal or abnormal.
 To count BMI, the user must fill out a form. It consists of selecting your gender and entering your height and weight. In addition, the user can change the unit in which he gives his height or weight. If the height/weight value is too small or too large, the message 'Too small'/'Too big' is displayed below. After completing the form, the calculated BMI is displayed along with an interpretation of whether the result is correct.
 The user can save his or her result, in which case a graph of the measured BMI will appear along with the date of measurement. With the graph, one can observe the changes in one's BMI over the recent past.
