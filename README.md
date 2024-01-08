@@ -35,6 +35,8 @@ On the other hand, at the bottom of the page, there are references to the author
 
 * In Polish and English, the title of the chart changes depending on the value of the recorded results - a different syntax is used for plurals.* At the bottom of the page there are references to the author's pages. After clicking on the selected icon, the user is redirected to the corresponding page. 
 
+* When you click on the graphics at the bottom of the page, the author's account opens in a new tab.
+
 ##  Application layout
 
 Below are screenshots showing the layout of the application. The screenshots are in Polish and English language.
