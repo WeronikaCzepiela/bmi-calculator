@@ -1,6 +1,6 @@
 # BMI Calculator 
 
-A web application that allows users to measure BMI, save the result, and compare their measurements with previous ones.
+A web application that allows users to measure BMI, save the result, and also compare their measurements with previous ones.
 
 ## Description
 
@@ -12,16 +12,27 @@ On the other hand, at the bottom of the page, there are references to the author
 ## Features
 
 * The entire application is available in Polish (target language), English, or Spanish.
+
 * Changing the language is available by clicking on the corresponding flag, which is located in the upper right corner.
+
 * When clicking 'What is BMI?', the user is taken to another tab. There is a description of BMI along with its interpretation. After clicking 'BMI Calculator', the user is taken to a tab with a form. The two captions are at the top of the page.
+
 * When entering a height or weight value that is too small or too large, error messages appear.
+
 * Gender is initially marked as 'male'.
+
 * Weight/length units can be changed by selecting the desired measure.
+
 * After completing the form, the calculated BMI appears with a message about whether it is correct. Depending on the interpretation, the color of the window that appears changes.
+
 * The BMI value is saved when the button is pressed. If the user saves a second or subsequent result during the day, the data is overwritten.
+
 * The save button changes its appearance when hovered over or pressed.
+
 * The graph of the BMI measured so far, only appears on the page if the user saves at least one result.
+
 * The color of the markers on the graph depends on the size of the measured BMI.
+
 * In Polish and English, the title of the chart changes depending on the value of the recorded results - a different syntax is used for plurals.* At the bottom of the page there are references to the author's pages. After clicking on the selected icon, the user is redirected to the corresponding page. 
 
 ##  Application layout

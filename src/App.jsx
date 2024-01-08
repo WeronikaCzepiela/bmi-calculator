@@ -30,11 +30,12 @@ export const App = () => {
     } else {
       newMeasurementsHistory = changeMeasure(measurementsHistory, bmi, date)
     }
-
-    setMeasurementsHistory(newMeasurementsHistory)
+   setMeasurementsHistory(newMeasurementsHistory)
     saveMeasurementsToLocalStorage(newMeasurementsHistory)
   }
 
+
+console.log(measurementsHistory) 
   return (
     <div className={'App'}>
       <Header />
