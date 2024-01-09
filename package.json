@@ -1,6 +1,7 @@
 {
   "name": "bmi-calculator",
   "version": "0.1.0",
+  "homepage": "https://WeronikaCzepiela.github.io/bmi-calculator",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^3.1.1",
@@ -27,6 +28,8 @@
     "zod": "^3.21.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -49,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
