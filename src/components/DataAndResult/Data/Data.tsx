@@ -10,8 +10,9 @@ import { inchToCm, poundToKg, schema } from './Data.helpers'
 import { Result } from '../Result/Result'
 import { Save } from '../Save/Save'
 import { useTranslation } from 'react-i18next'
+import { DataTypes } from './Data.types'
 
-export const Data = ({ setNewMeasurementsHistory }) => {
+export const Data = ({ setNewMeasurementsHistory }: DataTypes) => {
   const { t } = useTranslation()
 
   const {
@@ -32,8 +33,8 @@ export const Data = ({ setNewMeasurementsHistory }) => {
   })
 
   const calculateBmi = () => {
-    let height = getValues('height')
-    let weight = getValues('weight')
+    let height = Number(getValues('height'))
+    let weight = Number(getValues('weight'))
     const sex = getValues('sex')
     const height_unit = getValues('height_unit')
     const weight_unit = getValues('weight_unit')
@@ -41,10 +42,11 @@ export const Data = ({ setNewMeasurementsHistory }) => {
     if (weight_unit === 'pound') weight = poundToKg(weight)
     if (height > 100 && height < 350 && weight > 10 && weight < 1000 && sex !== '') {
       const bmi = (weight / (height * height)) * 10000
+
       return bmi.toFixed(2)
-    } else return
+    } else return '0'
   }
-  const bmi = calculateBmi()
+  const bmi = Number(calculateBmi())
   const optionSex = optionsSex(t)
   const optionWeight = optionsWeight(t)
   const optionHeight = optionsHeight(t)
