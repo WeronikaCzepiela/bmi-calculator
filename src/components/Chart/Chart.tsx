@@ -14,10 +14,11 @@ import { colorResult, getDateData, getValueData, optionChart } from './Chart.hel
 import { Text } from '../Text/Text'
 import { useWindowDimensions } from '../../utils/hookers/useWindowDimensions'
 import { dimension } from '../../utils/Dimension'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
+import { ChartTypes } from './Chart.types'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip)
-export const Chart = ({ measurementsHistory }) => {
+export const Chart = ({ measurementsHistory }: ChartTypes) => {
   const { t } = useTranslation()
   const dateData = getDateData(measurementsHistory)
   const dateValue = getValueData(measurementsHistory)

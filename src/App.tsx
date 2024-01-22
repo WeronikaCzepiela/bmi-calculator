@@ -10,20 +10,20 @@ import {
   getDate,
   getMeasurementsFromLocalStorage,
   isMeasureFromTheDate,
+  MeasurementsHistoryType,
   saveMeasurementsToLocalStorage,
 } from './App.helpers'
 import './utils/i18.config'
 import { Route, Routes } from 'react-router-dom'
 import { BmiDescription } from './components/BmiDescription/BmiDescription'
-
 export const App = () => {
   const [measurementsHistory, setMeasurementsHistory] = useState(getMeasurementsFromLocalStorage())
 
-  const setNewMeasurementsHistory = (bmi) => {
+  const setNewMeasurementsHistory = (bmi: number) => {
     if (!bmi) return
 
     const date = getDate()
-    let newMeasurementsHistory
+    let newMeasurementsHistory: MeasurementsHistoryType
 
     if (!isMeasureFromTheDate(measurementsHistory, date)) {
       newMeasurementsHistory = addNewMeasure(measurementsHistory, bmi, date)
