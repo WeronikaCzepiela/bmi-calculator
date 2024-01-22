@@ -1,9 +1,9 @@
 import './App.scss'
 import * as React from 'react'
+import { useState } from 'react'
 import { Header } from './components/Header/Header'
 import { BmiCalculator } from './components/BmiCalculator/BmiCalculator'
 import { Accounts } from './components/Accounts/Accounts'
-import { useState } from 'react'
 import {
   addNewMeasure,
   changeMeasure,
@@ -13,7 +13,7 @@ import {
   saveMeasurementsToLocalStorage,
 } from './App.helpers'
 import './utils/i18.config'
-import { createBrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { BmiDescription } from './components/BmiDescription/BmiDescription'
 
 export const App = () => {
@@ -30,18 +30,17 @@ export const App = () => {
     } else {
       newMeasurementsHistory = changeMeasure(measurementsHistory, bmi, date)
     }
-   setMeasurementsHistory(newMeasurementsHistory)
+    setMeasurementsHistory(newMeasurementsHistory)
     saveMeasurementsToLocalStorage(newMeasurementsHistory)
   }
 
-
-console.log(measurementsHistory) 
+  console.log(measurementsHistory)
   return (
     <div className={'App'}>
       <Header />
       <Routes>
         <Route
-          path={'/'}
+          path={'/bmi_calculator'}
           element={
             <BmiCalculator
               setNewMeasurementsHistory={setNewMeasurementsHistory}
