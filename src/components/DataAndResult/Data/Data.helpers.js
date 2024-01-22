@@ -14,11 +14,11 @@ const kgToPounds = (value) => {
 export const schema = (t) => {
   return z
     .object({
-      height: z.string(),
-      weight: z.string(),
-      sex: z.string().nonempty(),
-      height_unit: z.string().nonempty(),
-      weight_unit: z.string().nonempty(),
+      height: z.string().min(1, t('required')),
+      weight: z.string().min(1, t('required')),
+      sex: z.nativeEnum(['male', 'female']),
+      height_unit: z.string(),
+      weight_unit: z.string(),
     })
     .superRefine(({ sex, height, height_unit, weight_unit, weight }, ctx) => {
       const heightNumber = parseInt(height)

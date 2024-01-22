@@ -6,7 +6,7 @@ import { RadioGroupForm } from './RadioGroup/RadioGroupForm'
 import { SelectInputForm } from './SelectInput/SelectInputForm'
 import { optionsHeight, optionsSex, optionsWeight } from './Options'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { inchToCm, poundToKg, schema, schemaFunction } from './Data.helpers'
+import { inchToCm, poundToKg, schema } from './Data.helpers'
 import { Result } from '../Result/Result'
 import { Save } from '../Save/Save'
 import { useTranslation } from 'react-i18next'
@@ -16,8 +16,8 @@ export const Data = ({ setNewMeasurementsHistory }) => {
 
   const {
     control,
+    handleSubmit,
     getValues,
-    watch,
     formState: { errors },
   } = useForm({
     mode: 'onChange',
@@ -70,7 +70,7 @@ export const Data = ({ setNewMeasurementsHistory }) => {
         <TextInputForm label={t('weight')} name={'weight'} control={control} />
       </div>
       {bmi && <Result BMI={bmi} />}
-      <Save setNewMeasurementsHistory={() => setNewMeasurementsHistory(bmi)} />
+      <Save onClick={handleSubmit(() => setNewMeasurementsHistory(bmi))} />
     </div>
   )
 }

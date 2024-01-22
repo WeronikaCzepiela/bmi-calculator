@@ -2,6 +2,7 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
 const translationPl = {
+  required: 'To pole nie może być puste',
   bmi_calculator: 'Kalkulator BMI',
   what_is_bmi: 'Co to jest BMI?',
   parameters: 'Parametry',
@@ -40,6 +41,7 @@ const translationPl = {
 }
 
 const translationEn = {
+  required: 'This field cannot be empty',
   bmi_calculator: 'BMI Calculator',
   what_is_bmi: 'What is BMI?',
   parameters: 'Parameters',
@@ -78,6 +80,7 @@ const translationEn = {
 }
 
 const translationEs = {
+  required: 'Este campo no debe estar vacío',
   bmi_calculator: 'Calculadora de IMC',
   what_is_bmi: '¿Qué es el IMC? ',
   parameters: 'Parámetros',
