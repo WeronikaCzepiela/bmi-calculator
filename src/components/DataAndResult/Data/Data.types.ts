@@ -1,5 +1,5 @@
 import { SetMeasureHistoryTypes } from '../../../App.helpers'
 
 export type DataTypes = {
-  setNewMeasurementsHistory: SetMeasureHistoryTypes
+  setNewMeasurementsHistory: (bmi: number) => void
 }
