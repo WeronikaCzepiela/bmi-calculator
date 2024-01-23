@@ -2,7 +2,19 @@ import './Text.scss'
 import { useWindowDimensions } from '../../utils/hookers/useWindowDimensions'
 import { dimension } from '../../utils/Dimension'
 
-export const Text = ({ type, children }) => {
+enum TypesOfText {
+  H2 = 'h2',
+  L = 'l',
+  E = 'e',
+  T = 't',
+}
+
+type TextType = {
+  type: TypesOfText
+  children: string
+}
+
+export const Text = ({ type, children }: TextType) => {
   const { width } = useWindowDimensions()
 
   if (type === 'h2') {
