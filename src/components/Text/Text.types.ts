@@ -6,6 +6,6 @@ export enum TypesOfText {
 }
 
 export type TextType = {
-  type: TypesOfText
+  type?: TypesOfText
   children: string
 }

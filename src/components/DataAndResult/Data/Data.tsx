@@ -11,6 +11,7 @@ import { Result } from '../Result/Result'
 import { Save } from '../Save/Save'
 import { useTranslation } from 'react-i18next'
 import { DataTypes } from './Data.types'
+import { TypesOfText } from '../../Text/Text.types'
 
 export const Data = ({ setNewMeasurementsHistory }: DataTypes) => {
   const { t } = useTranslation()
@@ -54,7 +55,7 @@ export const Data = ({ setNewMeasurementsHistory }: DataTypes) => {
   return (
     <div className={'data-and-result'}>
       <div className={'data'}>
-        <Text type={'h2'}>{t('parameters')}</Text>
+        <Text type={TypesOfText.H2}>{t('parameters')}</Text>
         <SelectInputForm label={t('sex')} options={optionSex} control={control} name={'sex'} />
         <RadioGroupForm
           label={t('height_unit')}
