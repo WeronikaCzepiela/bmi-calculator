@@ -1,6 +1,6 @@
 import { MeasurementsHistoryType, SetMeasureHistoryTypes } from '../../App.helpers'
 
 export type BmiCalculatorTypes = {
-  setNewMeasurementsHistory: SetMeasureHistoryTypes
+  setNewMeasurementsHistory: (bmi: number) => void
   measurementsHistory: MeasurementsHistoryType
 }
