@@ -16,6 +16,7 @@ import { useWindowDimensions } from '../../utils/hookers/useWindowDimensions'
 import { dimension } from '../../utils/Dimension'
 import { useTranslation } from 'react-i18next'
 import { ChartTypes } from './Chart.types'
+import { TypesOfText } from '../Text/Text.types'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip)
 export const Chart = ({ measurementsHistory }: ChartTypes) => {
@@ -47,7 +48,7 @@ export const Chart = ({ measurementsHistory }: ChartTypes) => {
 
   return (
     <div className={`chart ${width > dimension() && 'chart-desktop'}`}>
-      <Text type={'t'}> {t('title', { count: count })}</Text>
+      <Text type={TypesOfText.T}>{t('title', { count: count })}</Text>
       <Line data={dataSet} options={optionChart} />
     </div>
   )
