@@ -1,7 +1,8 @@
 import { Controller } from 'react-hook-form'
 import { RadioGroup } from './RadioGroup'
+import { RadioGroupFormTypes } from './RadioGroup.types'
 
-export const RadioGroupForm = (props) => {
+export const RadioGroupForm = (props: RadioGroupFormTypes) => {
   return (
     <Controller
       name={props.name}

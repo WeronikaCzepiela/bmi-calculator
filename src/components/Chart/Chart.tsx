@@ -10,14 +10,16 @@ import {
   Tooltip,
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
-import { colorResult, getDateData, getValueData, optionChart } from './Chart.helpers'
+import { colorResult, getDateData, getValueData, OPTIONS_CHART } from './Chart.helpers'
 import { Text } from '../Text/Text'
 import { useWindowDimensions } from '../../utils/hookers/useWindowDimensions'
 import { dimension } from '../../utils/Dimension'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
+import { ChartTypes } from './Chart.types'
+import { TypesOfText } from '../Text/Text.types'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip)
-export const Chart = ({ measurementsHistory }) => {
+export const Chart = ({ measurementsHistory }: ChartTypes) => {
   const { t } = useTranslation()
   const dateData = getDateData(measurementsHistory)
   const dateValue = getValueData(measurementsHistory)
@@ -46,8 +48,9 @@ export const Chart = ({ measurementsHistory }) => {
 
   return (
     <div className={`chart ${width > dimension() && 'chart-desktop'}`}>
-      <Text type={'t'}> {t('title', { count: count })}</Text>
-      <Line data={dataSet} options={optionChart} />
+      <Text type={TypesOfText.T}>{t('title', { count: count })}</Text>
+      {/* @ts-expect-error */}
+      <Line data={dataSet} options={OPTIONS_CHART} />
     </div>
   )
 }

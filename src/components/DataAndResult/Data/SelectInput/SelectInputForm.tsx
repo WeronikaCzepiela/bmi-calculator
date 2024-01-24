@@ -1,7 +1,8 @@
 import { Controller } from 'react-hook-form'
 import { SelectInput } from './SelectInput'
+import { SelectInputFormTypes } from './SelectInput.types'
 
-export const SelectInputForm = (props) => {
+export const SelectInputForm = (props: SelectInputFormTypes) => {
   return (
     <Controller
       name={props.name}

@@ -1,4 +1,4 @@
-export const customStyles = {
+export const CUSTOM_STYLES = {
   option: (defaultStyles, state) => ({
     ...defaultStyles,
     defaultStyles,
