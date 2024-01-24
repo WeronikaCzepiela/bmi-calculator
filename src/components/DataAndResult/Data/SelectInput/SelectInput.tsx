@@ -1,7 +1,7 @@
 import ReactSelect from 'react-select'
 import './SelectInput.scss'
 import { Text } from '../../../Text/Text'
-import { CUSTOM_STYLES } from './CustomStyles'
+import { CUSTOM_STYLES } from './SelectInput.const'
 import { useWindowDimensions } from '../../../../utils/hookers/useWindowDimensions'
 import { dimension } from '../../../../utils/Dimension'
 import { useTranslation } from 'react-i18next'
