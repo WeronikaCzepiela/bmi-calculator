@@ -5,7 +5,7 @@ export type RadioGroupTypes = {
   options: OptionsTypes
   name: 'height' | 'sex' | 'height_unit' | 'weight_unit' | 'weight'
   label: string
-  onChange: VoidFunction
+  onChange: (arg: string) => void
   defaultValue: string
 }
 

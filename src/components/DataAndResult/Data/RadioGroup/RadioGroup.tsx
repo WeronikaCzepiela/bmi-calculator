@@ -10,7 +10,7 @@ export const RadioGroup = ({ options, name, label, onChange, defaultValue }: Rad
   const { width } = useWindowDimensions()
 
   const handleChange = (selectedOption: FormEvent<HTMLDivElement>) => {
-    onChange(selectedOption.target.value)
+    onChange((selectedOption.target as HTMLInputElement).value)
   }
 
   return (
