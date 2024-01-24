@@ -3,12 +3,8 @@ import { Chart } from '../Chart/Chart'
 import { Data } from '../DataAndResult/Data/Data'
 import { useWindowDimensions } from '../../utils/hookers/useWindowDimensions'
 import { dimension } from '../../utils/Dimension'
-import { BmiCalculatorTypes } from './BmiCalculator.types'
 
-export const BmiCalculator = ({
-  setNewMeasurementsHistory,
-  measurementsHistory,
-}: BmiCalculatorTypes) => {
+export const BmiCalculator = ({ setNewMeasurementsHistory, measurementsHistory }) => {
   const { width } = useWindowDimensions()
 
   return (

@@ -1,18 +1,18 @@
 import * as z from 'zod'
 import { TFunction } from 'i18next'
 
-export const poundToKg = (value: number) => {
+export const poundToKg = (value) => {
   return value * 0.4546
 }
-export const inchToCm = (value: number) => {
+export const inchToCm = (value) => {
   return value * 2.54
 }
 
-const kgToPounds = (value: number) => {
+const kgToPounds = (value) => {
   return value * 2.205
 }
 
-export const schema = (t: TFunction) => {
+export const schema = (t) => {
   return z
     .object({
       height: z.string().min(1, t('required')),

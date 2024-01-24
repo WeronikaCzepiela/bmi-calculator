@@ -15,11 +15,9 @@ import { Text } from '../Text/Text'
 import { useWindowDimensions } from '../../utils/hookers/useWindowDimensions'
 import { dimension } from '../../utils/Dimension'
 import { useTranslation } from 'react-i18next'
-import { ChartTypes } from './Chart.types'
-import { TypesOfText } from '../Text/Text.types'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip)
-export const Chart = ({ measurementsHistory }: ChartTypes) => {
+export const Chart = ({ measurementsHistory }) => {
   const { t } = useTranslation()
   const dateData = getDateData(measurementsHistory)
   const dateValue = getValueData(measurementsHistory)
@@ -48,8 +46,7 @@ export const Chart = ({ measurementsHistory }: ChartTypes) => {
 
   return (
     <div className={`chart ${width > dimension() && 'chart-desktop'}`}>
-      <Text type={TypesOfText.T}>{t('title', { count: count })}</Text>
-      {/* @ts-expect-error */}
+      <Text type={'t'}>{t('title', { count: count })}</Text>
       <Line data={dataSet} options={OPTIONS_CHART} />
     </div>
   )

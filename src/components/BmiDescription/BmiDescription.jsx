@@ -1,14 +1,13 @@
 import './BmiDescription.scss'
 import { Text } from '../Text/Text'
 import { useTranslation } from 'react-i18next'
-import { TypesOfText } from '../Text/Text.types'
 
 export const BmiDescription = () => {
   const { t } = useTranslation()
 
   return (
     <div className={'what_is_bmi'}>
-      <Text type={TypesOfText.T}>{t('what_is_bmi')}</Text>
+      <Text type={'t'}>{t('what_is_bmi')}</Text>
       <div className={'description'}>
         <Text>{t('description')}</Text>
       </div>

@@ -1,17 +1,15 @@
-import ReactSelect, { SingleValue } from 'react-select'
+import ReactSelect from 'react-select'
 import './SelectInput.scss'
 import { Text } from '../../../Text/Text'
 import { CUSTOM_STYLES } from './SelectInput.const'
 import { useWindowDimensions } from '../../../../utils/hookers/useWindowDimensions'
 import { dimension } from '../../../../utils/Dimension'
 import { useTranslation } from 'react-i18next'
-import { SelectInputTypes } from './SelectInput.types'
-import { TypesOfText } from '../../../Text/Text.types'
 
-export const SelectInput = ({ options, label, onChange, value }: SelectInputTypes) => {
+export const SelectInput = ({ options, label, onChange, value }) => {
   const { width } = useWindowDimensions()
 
-  const handleChange = (selectedOption: SingleValue<{ label: string; value: string }>) => {
+  const handleChange = (selectedOption) => {
     if (selectedOption) onChange(selectedOption.value)
   }
 
@@ -25,7 +23,7 @@ export const SelectInput = ({ options, label, onChange, value }: SelectInputType
 
   return (
     <div className={`select ${width > dimension() && 'select-desktop'}`}>
-      <Text type={TypesOfText.L}>{label}</Text>
+      <Text type={'l'}>{label}</Text>
       <ReactSelect
         className={'select-input'}
         options={options}

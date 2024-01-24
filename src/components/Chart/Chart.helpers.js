@@ -1,6 +1,4 @@
-import { MeasurementsHistoryType } from '../../App.helpers'
-
-export const colorResult = (dataValue: Array<string>) =>
+export const colorResult = (dataValue) =>
   dataValue.map((stringItem) => {
     const item = parseInt(stringItem)
     if (item < 17 || item >= 30) return '#DC483E'
@@ -8,11 +6,11 @@ export const colorResult = (dataValue: Array<string>) =>
     if (item >= 18.5 && item < 25) return '#1A9C1F'
   })
 
-export const getDateData = (measurements: MeasurementsHistoryType) => {
+export const getDateData = (measurements) => {
   return measurements.map((item) => item.date)
 }
 
-export const getValueData = (measurements: MeasurementsHistoryType) => {
+export const getValueData = (measurements) => {
   return measurements.map((item) => item.value)
 }
 
