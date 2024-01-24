@@ -12,6 +12,6 @@ export type RadioGroupTypes = {
 export type RadioGroupFormTypes = {
   label: string
   options: OptionsTypes
-  name: 'height' | 'sex' | 'height_unit' | 'weight_unit' | 'weight'
+  name: 'height_unit' | 'weight_unit'
   control: ControlType
 }

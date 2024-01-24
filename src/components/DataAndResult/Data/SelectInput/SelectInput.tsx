@@ -1,4 +1,4 @@
-import ReactSelect from 'react-select'
+import ReactSelect, { SingleValue } from 'react-select'
 import './SelectInput.scss'
 import { Text } from '../../../Text/Text'
 import { CUSTOM_STYLES } from './SelectInput.const'
@@ -11,8 +11,8 @@ import { TypesOfText } from '../../../Text/Text.types'
 export const SelectInput = ({ options, label, onChange, value }: SelectInputTypes) => {
   const { width } = useWindowDimensions()
 
-  const handleChange = (selectedOption) => {
-    onChange(selectedOption.value)
+  const handleChange = (selectedOption: SingleValue<{ label: string; value: string }>) => {
+    if (selectedOption) onChange(selectedOption.value)
   }
 
   const defaultValue = () => {
