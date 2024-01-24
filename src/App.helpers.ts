@@ -36,7 +36,9 @@ export const saveMeasurementsToLocalStorage = (newMeasurementsHistory: Measureme
 }
 
 export const getMeasurementsFromLocalStorage = () => {
-  const historyMeasurements = JSON.parse(window.localStorage.getItem('BMI-list'))
+  const itemsInHistory = window.localStorage.getItem('BMI-list')
+  let historyMeasurements = []
+  if (itemsInHistory) historyMeasurements = JSON.parse(itemsInHistory)
   if (historyMeasurements) return historyMeasurements
 
   return []
