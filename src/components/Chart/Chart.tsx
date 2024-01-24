@@ -49,6 +49,7 @@ export const Chart = ({ measurementsHistory }: ChartTypes) => {
   return (
     <div className={`chart ${width > dimension() && 'chart-desktop'}`}>
       <Text type={TypesOfText.T}>{t('title', { count: count })}</Text>
+      {/* @ts-expect-error */}
       <Line data={dataSet} options={OPTIONS_CHART} />
     </div>
   )

@@ -4,12 +4,12 @@ import { useWindowDimensions } from '../../../../utils/hookers/useWindowDimensio
 import { dimension } from '../../../../utils/Dimension'
 import { RadioGroupTypes } from './RadioGroup.types'
 import { TypesOfText } from '../../../Text/Text.types'
-import { OptionsTypes } from '../TextInput/Options.types'
+import { FormEvent } from 'react'
 
 export const RadioGroup = ({ options, name, label, onChange, defaultValue }: RadioGroupTypes) => {
   const { width } = useWindowDimensions()
 
-  const handleChange = (selectedOption) => {
+  const handleChange = (selectedOption: FormEvent<HTMLDivElement>) => {
     onChange(selectedOption.target.value)
   }
 

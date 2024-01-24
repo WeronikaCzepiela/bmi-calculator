@@ -1,12 +1,14 @@
 import ReactSelect from 'react-select'
 import './SelectInput.scss'
 import { Text } from '../../../Text/Text'
-import { customStyles } from './CustomStyles'
+import { CUSTOM_STYLES } from './CustomStyles'
 import { useWindowDimensions } from '../../../../utils/hookers/useWindowDimensions'
 import { dimension } from '../../../../utils/Dimension'
 import { useTranslation } from 'react-i18next'
+import { SelectInputTypes } from './SelectInput.types'
+import { TypesOfText } from '../../../Text/Text.types'
 
-export const SelectInput = ({ options, label, onChange, value }) => {
+export const SelectInput = ({ options, label, onChange, value }: SelectInputTypes) => {
   const { width } = useWindowDimensions()
 
   const handleChange = (selectedOption) => {
@@ -23,13 +25,13 @@ export const SelectInput = ({ options, label, onChange, value }) => {
 
   return (
     <div className={`select ${width > dimension() && 'select-desktop'}`}>
-      <Text type={'l'}>{label}</Text>
+      <Text type={TypesOfText.L}>{label}</Text>
       <ReactSelect
         className={'select-input'}
         options={options}
         defaultValue={defaultValue()}
         placeholder={t('placeholder')}
-        styles={customStyles}
+        styles={CUSTOM_STYLES}
         onChange={handleChange}
       />
     </div>
