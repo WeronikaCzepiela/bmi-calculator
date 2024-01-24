@@ -16,7 +16,7 @@ export const getValueData = (measurements: MeasurementsHistoryType) => {
   return measurements.map((item) => item.value)
 }
 
-export const optionChart = {
+export const OPTIONS_CHART = {
   options: {
     scaleShowGridLines: true,
     scales: {
