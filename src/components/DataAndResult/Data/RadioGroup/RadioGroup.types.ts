@@ -3,7 +3,7 @@ import { ControlType } from '../Data.types'
 
 export type RadioGroupTypes = {
   options: OptionsTypes
-  name: string
+  name: 'height' | 'sex' | 'height_unit' | 'weight_unit' | 'weight'
   label: string
   onChange: VoidFunction
   defaultValue: string
@@ -12,6 +12,6 @@ export type RadioGroupTypes = {
 export type RadioGroupFormTypes = {
   label: string
   options: OptionsTypes
-  name: string
+  name: 'height' | 'sex' | 'height_unit' | 'weight_unit' | 'weight'
   control: ControlType
 }

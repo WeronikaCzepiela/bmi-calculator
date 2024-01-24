@@ -6,8 +6,8 @@ import i18n from 'i18next'
 import { useWindowDimensions } from '../../utils/hookers/useWindowDimensions'
 
 export const LanguagePicker = () => {
-  const onChangeLanguage = (lng) => {
-    i18n.changeLanguage(lng)
+  const onChangeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng).then()
   }
   const { width } = useWindowDimensions()
   const languages = [
