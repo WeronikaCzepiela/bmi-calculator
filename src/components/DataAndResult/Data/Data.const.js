@@ -1,5 +1,3 @@
-import { TFunction } from 'i18next'
-
 export const optionsSex = (t) => [
   { label: t('male'), value: 'male' },
   { label: t('female'), value: 'female' },

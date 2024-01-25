@@ -14,12 +14,7 @@ import { useTranslation } from 'react-i18next'
 export const Data = ({ setNewMeasurementsHistory }) => {
   const { t } = useTranslation()
 
-  const {
-    control,
-    handleSubmit,
-    getValues,
-    formState: { errors },
-  } = useForm({
+  const { control, handleSubmit, getValues } = useForm({
     mode: 'onChange',
     defaultValues: {
       sex: 'male',
