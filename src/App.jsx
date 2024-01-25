@@ -39,7 +39,7 @@ export const App = () => {
       <Header />
       <Routes>
         <Route
-          path={'/bmi_calculator'}
+          path={'/bmi-calculator'}
           element={
             <BmiCalculator
               setNewMeasurementsHistory={setNewMeasurementsHistory}

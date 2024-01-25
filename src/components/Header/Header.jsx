@@ -11,7 +11,7 @@ export const Header = () => {
     <div className={'header'}>
       <nav className={'navigation_buttons'}>
         <div className={'calculator'}>
-          <Link to={'/bmi_calculator'} className={'link'}>
+          <Link to={'/bmi-calculator'} className={'link'}>
             <Text>{t('bmi_calculator')}</Text>
             <div className={'line'}></div>
           </Link>
