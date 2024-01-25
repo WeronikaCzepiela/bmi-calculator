@@ -116,16 +116,13 @@ const translationEs = {
   too_big: 'Demasiado grande',
 }
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources: {
-      pl: { translation: translationPl },
-      en: { translation: translationEn },
-      es: { translation: translationEs },
-    },
-    lng: 'pl',
-    fallbackLng: 'en',
-    interpolation: { escapeValue: false },
-  })
-  .then()
+i18n.use(initReactI18next).init({
+  resources: {
+    pl: { translation: translationPl },
+    en: { translation: translationEn },
+    es: { translation: translationEs },
+  },
+  lng: 'pl',
+  fallbackLng: 'en',
+  interpolation: { escapeValue: false },
+})
