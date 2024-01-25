@@ -1,7 +1,7 @@
 import './TextInput.scss'
 import { Text } from '../../../Text/Text'
 import { useWindowDimensions } from '../../../../utils/hookers/useWindowDimensions'
-import { dimension } from '../../../../utils/Dimension'
+import { DIMENSION } from '../../../../utils/Dimension'
 
 export const TextInput = ({ label, onChange, value, error }) => {
   const { width } = useWindowDimensions()
@@ -11,7 +11,7 @@ export const TextInput = ({ label, onChange, value, error }) => {
   }
 
   return (
-    <div className={`input ${width > dimension() && 'input-desktop'}`}>
+    <div className={`input ${width > DIMENSION() && 'input-desktop'}`}>
       <Text type={'l'}>{label}</Text>
       <input className={'input-group'} onChange={handleChange} value={value} type={'number'} />
       <Text type={'e'}>{error?.message}</Text>

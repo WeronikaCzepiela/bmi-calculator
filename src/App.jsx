@@ -10,12 +10,12 @@ import {
   getDate,
   getMeasurementsFromLocalStorage,
   isMeasureFromTheDate,
-  MeasurementsHistoryType,
   saveMeasurementsToLocalStorage,
 } from './App.helpers'
 import './utils/i18.config.js'
 import { Route, Routes } from 'react-router-dom'
 import { BmiDescription } from './components/BmiDescription/BmiDescription.jsx'
+
 export const App = () => {
   const [measurementsHistory, setMeasurementsHistory] = useState(getMeasurementsFromLocalStorage())
 

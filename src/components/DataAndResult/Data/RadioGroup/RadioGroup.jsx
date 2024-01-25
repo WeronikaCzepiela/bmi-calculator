@@ -1,7 +1,7 @@
 import './RadioGroup.scss'
 import { Text } from '../../../Text/Text'
 import { useWindowDimensions } from '../../../../utils/hookers/useWindowDimensions'
-import { dimension } from '../../../../utils/Dimension'
+import { DIMENSION } from '../../../../utils/Dimension'
 
 export const RadioGroup = ({ options, name, label, onChange, defaultValue }) => {
   const { width } = useWindowDimensions()
@@ -11,7 +11,7 @@ export const RadioGroup = ({ options, name, label, onChange, defaultValue }) => 
   }
 
   return (
-    <div className={`radio-group ${width > dimension() && 'radio-group-desktop'}`}>
+    <div className={`radio-group ${width > DIMENSION() && 'radio-group-desktop'}`}>
       <Text type={'l'}>{label}</Text>
       {options.map(({ label, value }) => {
         return (

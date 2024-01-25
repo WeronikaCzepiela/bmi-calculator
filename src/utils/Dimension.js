@@ -1,3 +1,3 @@
-export const dimension = () => {
+export const DIMENSION = () => {
   return 600
 }

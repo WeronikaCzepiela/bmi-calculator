@@ -3,7 +3,7 @@ import './SelectInput.scss'
 import { Text } from '../../../Text/Text'
 import { CUSTOM_STYLES } from './SelectInput.const'
 import { useWindowDimensions } from '../../../../utils/hookers/useWindowDimensions'
-import { dimension } from '../../../../utils/Dimension'
+import { DIMENSION } from '../../../../utils/Dimension'
 import { useTranslation } from 'react-i18next'
 
 export const SelectInput = ({ options, label, onChange, value }) => {
@@ -22,7 +22,7 @@ export const SelectInput = ({ options, label, onChange, value }) => {
   const { t } = useTranslation()
 
   return (
-    <div className={`select ${width > dimension() && 'select-desktop'}`}>
+    <div className={`select ${width > DIMENSION() && 'select-desktop'}`}>
       <Text type={'l'}>{label}</Text>
       <ReactSelect
         className={'select-input'}

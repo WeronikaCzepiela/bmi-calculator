@@ -13,7 +13,7 @@ import { Line } from 'react-chartjs-2'
 import { colorResult, getDateData, getValueData, OPTIONS_CHART } from './Chart.helpers'
 import { Text } from '../Text/Text'
 import { useWindowDimensions } from '../../utils/hookers/useWindowDimensions'
-import { dimension } from '../../utils/Dimension'
+import { DIMENSION } from '../../utils/Dimension'
 import { useTranslation } from 'react-i18next'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip)
@@ -45,7 +45,7 @@ export const Chart = ({ measurementsHistory }) => {
   }
 
   return (
-    <div className={`chart ${width > dimension() && 'chart-desktop'}`}>
+    <div className={`chart ${width > DIMENSION() && 'chart-desktop'}`}>
       <Text type={'t'}>{t('title', { count: count })}</Text>
       <Line data={dataSet} options={OPTIONS_CHART} />
     </div>
