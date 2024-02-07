@@ -45,6 +45,7 @@ export const Data = ({ setNewMeasurementsHistory }) => {
       return bmi.toFixed(2)
     } else return '0'
   }
+
   const bmi = Number(calculateBmi())
   const optionSex = optionsSex(t)
   const optionWeight = optionsWeight(t)
