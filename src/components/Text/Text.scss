@@ -4,20 +4,17 @@
   color: #FBFBFD;
   font-family: Rubik;
 }
-
 p {
   @extend %text;
   font-size: 14px;
   margin-bottom: 5px;
   margin-top: 5px;
 }
-
 .error {
   margin-top: 4px;
   margin-bottom: 0;
   color: red;
 }
-
 .title {
   @extend %text;
   font-size: 16px;
@@ -26,17 +23,14 @@ p {
     font-size: 25px
   }
 }
-
 label {
   @extend %text;
   font-size: 16px;
 }
-
 h2 {
   @extend %text;
   font-size: 32px;
 }
-
 .h2-desktop {
   margin-bottom: 0;
   margin-top: 10px;
