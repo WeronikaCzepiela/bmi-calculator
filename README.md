@@ -5,7 +5,7 @@ A web application that allows users to measure BMI, save the result, and also co
 
 ## See the website
 
-You can see the website if you click in the [Link](https://weronikaczepiela.github.io/bmi-calculator/)
+You can see the website if you click in the: [Link](https://weronikaczepiela.github.io/bmi-calculator/)
 
 ## Description
 
